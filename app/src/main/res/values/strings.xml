@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">YxzWholeSale</string>
+    <string name="return_back">返回</string>
+    <string name="tab_index">首页</string>
+    <string name="tab_recommend">推荐</string>
+    <string name="tab_search">搜索</string>
+    <string name="tab_chat">聊天</string>
+    <string name="tab_person">个人中心</string>
 </resources>
