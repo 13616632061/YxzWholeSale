@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
     buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.wholesale.yzx.yxzwholesale"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -17,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -24,7 +26,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:27.+'
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.nshmura:recyclertablayout:1.5.0'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
 }

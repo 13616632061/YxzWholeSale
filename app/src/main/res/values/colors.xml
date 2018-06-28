@@ -14,4 +14,6 @@
     <color name="bggray">#F2F2F2</color>
     <!--浅灰（分割线）-->
     <color name="linegray">#EBEBEB</color>
+    <color name="colorOrange">#FFFF00</color>
+    <color name="red">#FF0000</color>
 </resources>

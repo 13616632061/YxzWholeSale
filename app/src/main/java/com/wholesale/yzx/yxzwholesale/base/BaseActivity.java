@@ -3,9 +3,10 @@ package com.wholesale.yzx.yxzwholesale.base;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.support.annotation.ColorInt;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,8 +32,8 @@ public abstract class BaseActivity extends AppCompatActivity{
     private Loading mloading;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(getContentId());
         initSystemStatus(R.color.status_bar_color);
         init();
@@ -70,8 +71,22 @@ public abstract class BaseActivity extends AppCompatActivity{
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+        // 如果亮色，设置状态栏文字为黑色
+        if (isLightColor(ResId)) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        }
     }
-
+    /**
+     * 判断颜色是不是亮色
+     *
+     * @param color
+     * @return
+     */
+    private boolean isLightColor(@ColorInt int color) {
+        return ColorUtils.calculateLuminance(color) >= 0.5;
+    }
     /**
      * 初始化标题
      * @param title 页面标题名

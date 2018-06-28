@@ -6,6 +6,11 @@ import android.widget.RadioGroup;
 
 import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
+import com.wholesale.yzx.yxzwholesale.view.fragment.ChatFragment;
+import com.wholesale.yzx.yxzwholesale.view.fragment.IndexFragment;
+import com.wholesale.yzx.yxzwholesale.view.fragment.PersonFragment;
+import com.wholesale.yzx.yxzwholesale.view.fragment.RecomendFragment;
+import com.wholesale.yzx.yxzwholesale.view.fragment.SearchFragment;
 
 import butterknife.InjectView;
 
@@ -35,6 +40,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         super.init();
 
         tabsRg.setOnCheckedChangeListener(this);
+        tabsRg.getChildAt(0).performClick();
     }
 
     // 设置底部导航栏图片的颜色和字体的颜色。
@@ -52,16 +58,31 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
      */
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+        //设置底部导航栏字体颜色
+        RadioButton rb = (RadioButton) radioGroup.findViewWithTag("checked");
+        if (rb != null) {
+            rb.setTextColor(rb.getResources().getColor(R.color.text_color_title));
+            rb.setTag(null);
+        }
+        RadioButton radioButton = (RadioButton) radioGroup.findViewById(checkedId);
+        radioButton.setTag("checked");
+        radioButton.setTextColor(radioButton.getResources().getColor(R.color.red));
+
         switch (checkedId) {
             case R.id.tab_index:
+                showFragment(R.id.main_fragment,new IndexFragment());
                 break;
             case R.id.tab_recommend:
+                showFragment(R.id.main_fragment,new RecomendFragment());
                 break;
             case R.id.tab_search:
+                showFragment(R.id.main_fragment,new SearchFragment());
                 break;
             case R.id.tab_chat:
+                showFragment(R.id.main_fragment,new ChatFragment());
                 break;
             case R.id.tab_person:
+                showFragment(R.id.main_fragment,new PersonFragment());
                 break;
         }
     }
