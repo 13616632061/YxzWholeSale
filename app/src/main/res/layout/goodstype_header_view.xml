@@ -5,9 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list"
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/convenient_banner"
+        app:canLoop="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"></com.bigkoo.convenientbanner.ConvenientBanner>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_goods_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

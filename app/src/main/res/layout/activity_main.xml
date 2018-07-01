@@ -8,11 +8,6 @@
     android:background="@color/bggray"
     tools:context="com.wholesale.yzx.yxzwholesale.view.activity.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/main_fragment"
-        android:layout_above="@+id/bottom_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
     <RelativeLayout
         android:id="@+id/bottom_layout"
         android:layout_alignParentBottom="true"
@@ -80,4 +75,9 @@
         </RadioGroup>
 
     </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
 </RelativeLayout>

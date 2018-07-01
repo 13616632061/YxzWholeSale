@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_goods_url"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:text="sssss"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_goods_price"
+            android:layout_marginLeft="15dp"
+            android:text="￥99.00"
+            android:textSize="16sp"
+            android:textColor="@color/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_goods_spell_nums"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tv_goods_price"
+            android:text="已拼10万件"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_go_spell"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="去拼单"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@color/red"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+</LinearLayout>

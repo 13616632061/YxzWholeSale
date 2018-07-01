@@ -1,34 +1,38 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
-import android.support.annotation.Nullable;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.nshmura.recyclertablayout.RecyclerTabLayout;
 import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseData;
 import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
+import com.wholesale.yzx.yxzwholesale.bean.GoodsTypeBean;
+import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsPageAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by Administrator on 2018/6/28.
+ * Created by lyf on 2018/6/27.
  */
-
 public class IndexFragment extends BaseFragment {
+        @InjectView(R.id.tab_layout)
+        RecyclerTabLayout tabLayout;
+        @InjectView(R.id.viewpager)
+        ViewPager viewpager;
+    private IndexFragmentAdapter adapter;
+    private ArrayList<GoodsTypeBean> datas=new ArrayList<>();
+    private ArrayList<GoodsListFragment> fragments=new ArrayList<>();
 
-    @InjectView(R.id.viewpager)
-    ViewPager viewpager;
-    @InjectView(R.id.tab_layout)
-    RecyclerTabLayout tabLayout;
-
-    private List<GoodsListFragment> mGoodsListFragment = new ArrayList<>();
-    private GoodsPageAdapter adapter;
 
     @Override
     protected int getContentId() {
@@ -39,42 +43,51 @@ public class IndexFragment extends BaseFragment {
     protected void init() {
         super.init();
 
-        getTabType();
-
-    }
-
-    private void getTabType() {
-        for (int i = 0; i < BaseData.tabList.length; i++) {
-            mGoodsListFragment.add(new GoodsListFragment());
-        }
-        adapter = new GoodsPageAdapter(getFragmentManager());
+        initData();
+        adapter=new IndexFragmentAdapter(getFragmentManager());
         viewpager.setAdapter(adapter);
-        tabLayout.setUpWithViewPager(viewpager);
 
+        tabLayout.setUpWithViewPager(viewpager);//关联viewpager
 
     }
 
-    class GoodsPageAdapter extends FragmentPagerAdapter {
+    /**
+     * 初始化数据
+     */
+    private void initData(){
 
-        public GoodsPageAdapter(FragmentManager fm) {
+        for(int i = 0; i< BaseData.tabList.length; i++){
+            Bundle bundle=new Bundle();
+            bundle.putString("goodTypeId",i+"");//分类标签id,用户对应每一个分类数据刷新
+            GoodsListFragment goodsListFragment=new GoodsListFragment();
+            goodsListFragment.setArguments(bundle);
+
+            fragments.add(goodsListFragment);
+        }
+    }
+
+    /**
+     * viewpager支持Fragment适配器
+     */
+    public class IndexFragmentAdapter extends FragmentPagerAdapter{
+
+        public IndexFragmentAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            return mGoodsListFragment.get(position);
+            return fragments.get(position);
         }
 
         @Override
         public int getCount() {
-            return mGoodsListFragment.size();
+            return fragments.size();
         }
 
-        @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            return BaseData.tabList[position];
+            return BaseData.tabList[position];//分类标签
         }
     }
-
 }
