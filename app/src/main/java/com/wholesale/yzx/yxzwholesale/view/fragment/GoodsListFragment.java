@@ -2,6 +2,7 @@ package com.wholesale.yzx.yxzwholesale.view.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,9 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
+import com.wholesale.yzx.yxzwholesale.bean.GoodsSecondTypeBean;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
+import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsSecondTypeAdapter;
 import com.wholesale.yzx.yxzwholesale.view.widght.NetworkImageHolderView;
 
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ public class GoodsListFragment extends BaseFragment {
     public static List<String> goodsImageBanner;//广告轮播图数据
     private GoodsListFragmentAdapter adapter;//商品列表适配器
     private List<GoodsListBean> datas=new ArrayList<>();//商品数据
+    private List<GoodsSecondTypeBean> secondTypeDatas=new ArrayList<>();//商品二级分类
+    private GoodsSecondTypeAdapter goodsSecondTypeAdapter;
     private int type=0;//商品布局样式
 
 
@@ -63,12 +68,28 @@ public class GoodsListFragment extends BaseFragment {
         convenientBanner=headerView.findViewById(R.id.convenient_banner);
         list_goods_type=headerView.findViewById(R.id.list_goods_type);
 
+        goodsSecondTypeAdapter=new GoodsSecondTypeAdapter(getActivity(),R.layout.item_goods_second_type,secondTypeDatas);
+        list_goods_type.setAdapter(goodsSecondTypeAdapter);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(getActivity(),2);
+        gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        list_goods_type.setLayoutManager(gridLayoutManager);
 
-        adapter=new GoodsListFragmentAdapter(getActivity(),datas);
+
+        adapter=new GoodsListFragmentAdapter(getActivity(),R.layout.item_goods_list,datas);
         list.setAdapter(adapter);
-        list.setLayoutManager(new GridLayoutManager(getActivity(),type));
+        GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),type);
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return 0;
+            }
+        });
+        list.setLayoutManager(layoutManager);
+        adapter.addHeaderView(headerView);
 
         showConvenientBanner();
+        getGoodslistData();
+        getGoodsSecondTypeData();
     }
 
     /**
@@ -103,11 +124,113 @@ public class GoodsListFragment extends BaseFragment {
                 });
     }
 
+    private void getGoodsSecondTypeData(){
+            GoodsSecondTypeBean bean=new GoodsSecondTypeBean();
+            bean.setGoodsSecondTypeId(001);
+            bean.setGoodsSecondTypeName("限时秒杀");
+            bean.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+            secondTypeDatas.add(bean);
+        GoodsSecondTypeBean bean1=new GoodsSecondTypeBean();
+        bean1.setGoodsSecondTypeId(002);
+        bean1.setGoodsSecondTypeName("品牌清仓");
+        bean1.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean1);
+        GoodsSecondTypeBean bean2=new GoodsSecondTypeBean();
+        bean2.setGoodsSecondTypeId(003);
+        bean2.setGoodsSecondTypeName("名品折扣");
+        bean2.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean2);
+        GoodsSecondTypeBean bean3=new GoodsSecondTypeBean();
+        bean3.setGoodsSecondTypeId(004);
+        bean3.setGoodsSecondTypeName("男人帮");
+        bean3.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean3);
+        GoodsSecondTypeBean bean4=new GoodsSecondTypeBean();
+        bean4.setGoodsSecondTypeId(005);
+        bean4.setGoodsSecondTypeName("食品超市");
+        bean4.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean4);
+        GoodsSecondTypeBean bean5=new GoodsSecondTypeBean();
+        bean5.setGoodsSecondTypeId(006);
+        bean5.setGoodsSecondTypeName("电视厨卫");
+        bean5.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean5);
+        GoodsSecondTypeBean bean6=new GoodsSecondTypeBean();
+        bean6.setGoodsSecondTypeId(7);
+        bean6.setGoodsSecondTypeName("休闲零食");
+        bean6.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean6);
+        GoodsSecondTypeBean bean7=new GoodsSecondTypeBean();
+        bean7.setGoodsSecondTypeId(8);
+        bean7.setGoodsSecondTypeName("纸品湿巾");
+        bean7.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean7);
+        GoodsSecondTypeBean bean8=new GoodsSecondTypeBean();
+        bean8.setGoodsSecondTypeId(9);
+        bean8.setGoodsSecondTypeName("五金工具");
+        bean8.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean8);
+        GoodsSecondTypeBean bean9=new GoodsSecondTypeBean();
+        bean9.setGoodsSecondTypeId(010);
+        bean9.setGoodsSecondTypeName("查看全部");
+        bean9.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
+        secondTypeDatas.add(bean9);
+        goodsSecondTypeAdapter.notifyDataSetChanged();
+    }
+    /**
+     * 商品列表数据
+     */
     private void getGoodslistData(){
 
-        for(int i=0;i<20;i++){
             GoodsListBean bean=new GoodsListBean();
-        }
+            bean.setGoodsId("0");
+            bean.setGoodsName("蒙牛真果粒牛奶");
+            bean.setGoodsPrice(59.9);
+            bean.setGoodsSpellNums(9);
+            bean.setGoodsImageUrl("https://img11.360buyimg.com/mobilecms/s500x500_jfs/t19663/247/1001150916/163815/35bb42ae/5ab46f73N4049f6f8.jpg");
+
+            datas.add(bean);
+        GoodsListBean bean0=new GoodsListBean();
+        bean0.setGoodsId("1");
+        bean0.setGoodsName("三合一数据线");
+        bean0.setGoodsPrice(9.9);
+        bean0.setGoodsSpellNums(18);
+        bean0.setGoodsImageUrl("https://img12.360buyimg.com/mobilecms/s500x500_jfs/t21253/257/782525093/200559/e10302eb/5b18d1fdNe1be8bc0.jpg");
+
+        datas.add(bean0);
+        GoodsListBean bean1=new GoodsListBean();
+        bean1.setGoodsId("2");
+        bean1.setGoodsName("中药减肥");
+        bean1.setGoodsPrice(199.9);
+        bean1.setGoodsSpellNums(200);
+        bean1.setGoodsImageUrl("https://img10.360buyimg.com/mobilecms/s500x500_jfs/t21640/275/1372189259/162348/9575baca/5b27122eN3b046591.jpg");
+
+        datas.add(bean1);
+        GoodsListBean bean2=new GoodsListBean();
+        bean2.setGoodsId("3");
+        bean2.setGoodsName("罗蒙短袖商务上衣");
+        bean2.setGoodsPrice(599.9);
+        bean2.setGoodsSpellNums(7);
+        bean2.setGoodsImageUrl("https://img13.360buyimg.com/mobilecms/s500x500_jfs/t21736/143/1652567222/202038/fad4d09d/5b30e4cfNdf8f6fcd.jpg");
+
+        datas.add(bean2);
+        GoodsListBean bean3=new GoodsListBean();
+        bean3.setGoodsId("4");
+        bean3.setGoodsName("金冠伊利奶粉");
+        bean3.setGoodsPrice(399.9);
+        bean3.setGoodsSpellNums(50);
+        bean3.setGoodsImageUrl("https://img12.360buyimg.com/mobilecms/s500x500_jfs/t15043/88/2564947767/101257/3d33bf1e/5aa8f56dNb64ef094.jpg");
+
+        datas.add(bean3);
+        GoodsListBean bean4=new GoodsListBean();
+        bean4.setGoodsId("5");
+        bean4.setGoodsName("桂圆红枣枸杞");
+        bean4.setGoodsPrice(26.9);
+        bean4.setGoodsSpellNums(23);
+        bean4.setGoodsImageUrl("https://img10.360buyimg.com/mobilecms/s500x500_jfs/t22480/188/542489527/165309/e09bf2e1/5b344923N717392df.jpg");
+
+        datas.add(bean4);
+        adapter.notifyDataSetChanged();
     }
     @Override
     public void onResume() {
@@ -121,13 +244,7 @@ public class GoodsListFragment extends BaseFragment {
         convenientBanner.stopTurning();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
-    }
+
 
     @Override
     public void onDestroyView() {

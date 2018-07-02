@@ -2,6 +2,7 @@ package com.wholesale.yzx.yxzwholesale.view.adapter;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -20,11 +21,10 @@ public class GoodsListFragmentAdapter extends BaseQuickAdapter<GoodsListBean,Bas
 
     private Context context;
 
-    public GoodsListFragmentAdapter(Context context,List<GoodsListBean> data) {
-        super(data);
+    public GoodsListFragmentAdapter(Context context,@LayoutRes int layoutResId, @Nullable List<GoodsListBean> data) {
+        super(layoutResId, data);
         this.context=context;
     }
-
 
 
     @Override
