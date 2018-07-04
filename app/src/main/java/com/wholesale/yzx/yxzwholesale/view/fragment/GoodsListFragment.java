@@ -207,6 +207,13 @@ public class GoodsListFragment extends BaseFragment {
         GoodsListBean bean = new Gson().fromJson(json, GoodsListBean.class);
         if (bean != null) {
             for (GoodsListBean.ListFreshTypeBean bean1 : bean.getListFreshType()) {
+                if(type==1){
+                    bean1.setShowPellNum(true);
+                    bean1.setShowPellBtn(true);
+                }else {
+                    bean1.setShowPellNum(false);
+                    bean1.setShowPellBtn(false);
+                }
                 datas.add(bean1);
             }
         }

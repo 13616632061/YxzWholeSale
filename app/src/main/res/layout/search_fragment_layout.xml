@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bggray"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/text_color_title"
+            android:layout_centerInParent="true"
+            android:text="搜索"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_share"
+            android:src="@drawable/share"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <EditText
+            android:id="@+id/et_search"
+            android:drawableLeft="@drawable/search_bar_icon_normal"
+            android:drawableStart="@drawable/search_bar_icon_normal"
+            android:hint="搜索你要的商品"
+            android:drawablePadding="-215dp"
+            android:textSize="14sp"
+            android:paddingLeft="15dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_gray_redus5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/type_list"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/goods_list"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
 </LinearLayout>

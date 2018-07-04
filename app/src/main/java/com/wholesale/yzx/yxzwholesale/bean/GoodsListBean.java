@@ -34,6 +34,33 @@ public class GoodsListBean  {
         private String goodsListImg;
         private String price;
         private String discount;
+        private boolean isShowPellNum;//是否显示拼单头像
+        private boolean isShowPellBtn;//是否显示拼单按钮
+        private List<pellImageUrlBean>  pellImageList;
+        public List<pellImageUrlBean> getPellImageList() {
+            return pellImageList;
+        }
+
+        public boolean isShowPellBtn() {
+            return isShowPellBtn;
+        }
+
+        public void setShowPellBtn(boolean showPellBtn) {
+            isShowPellBtn = showPellBtn;
+        }
+
+        public boolean isShowPellNum() {
+            return isShowPellNum;
+        }
+
+        public void setShowPellNum(boolean showPellNum) {
+            isShowPellNum = showPellNum;
+        }
+
+        public void setPellImageList(List<pellImageUrlBean> pellImageList) {
+            this.pellImageList = pellImageList;
+        }
+
 
         public String getGoodsID() {
             return goodsID;
@@ -81,6 +108,18 @@ public class GoodsListBean  {
 
         public void setDiscount(String discount) {
             this.discount = discount;
+        }
+        public class pellImageUrlBean{
+
+            private String pellImageUrl;
+
+            public String getPellImageUrl() {
+                return pellImageUrl;
+            }
+
+            public void setPellImageUrl(String pellImageUrl) {
+                this.pellImageUrl = pellImageUrl;
+            }
         }
     }
 }

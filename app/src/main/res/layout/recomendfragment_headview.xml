@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/newGoods_layout"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="60dp">
@@ -12,9 +13,9 @@
             android:id="@+id/iv_circleimage"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
+            android:src="@drawable/daipingjia"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
         <TextView
             android:textSize="14sp"
             android:textColor="@color/text_color_title"
@@ -22,6 +23,13 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/iv_circleimage"
             android:text="新品"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_gray_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>

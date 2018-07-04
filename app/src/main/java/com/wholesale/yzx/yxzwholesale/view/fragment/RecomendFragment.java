@@ -61,6 +61,21 @@ public class RecomendFragment extends BaseFragment {
         list.setLayoutManager(layoutManager);
         adapter.addHeaderView(headerView);
 
+        //拼单头像显示情况
+        if(layoutManager.getSpanCount()>1){
+            for(int i=0;i<datas.size();i++){
+                datas.get(i).setShowPellNum(false);
+                datas.get(i).setShowPellBtn(false);
+            }
+            adapter.notifyDataSetChanged();
+        }else {
+            for(int i=0;i<datas.size();i++){
+                datas.get(i).setShowPellNum(true);
+                datas.get(i).setShowPellBtn(true);
+            }
+            adapter.notifyDataSetChanged();
+        }
+
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
@@ -87,6 +102,8 @@ public class RecomendFragment extends BaseFragment {
         GoodsListBean bean=new Gson().fromJson(json,GoodsListBean.class);
         if(bean!=null){
             for (GoodsListBean.ListFreshTypeBean bean1:bean.getListFreshType()){
+                bean1.setShowPellBtn(false);
+                bean1.setShowPellNum(true);
                 datas.add(bean1);
             }
         }

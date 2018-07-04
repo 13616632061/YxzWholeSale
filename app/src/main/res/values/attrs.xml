@@ -29,4 +29,9 @@
         <attr name="tvTextSize" format="dimension"/>
         <attr name="btnTextSize" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="PileLayout">
+        <attr name="PileLayout_vertivalSpace" format="dimension"/>
+        <attr name="PileLayout_pileWidth" format="dimension"/>
+    </declare-styleable>
 </resources>
