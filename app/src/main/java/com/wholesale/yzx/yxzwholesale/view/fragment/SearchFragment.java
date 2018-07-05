@@ -38,13 +38,13 @@ public class SearchFragment extends BaseFragment {
     @InjectView(R.id.goods_list)
     RecyclerView goodsList;
     @InjectView(R.id.refresh)
-    MaterialRefreshLayout refresh;
+    MaterialRefreshLayout  refresh;
 
 
     private SearchGoodsTypeAdapter typeAdapter;
     private List<SearchGoodsTypeBean.GoodsTypeListBean> typeDatas = new ArrayList<>();
     private SearchGoodsAdapter goodsAdapter;
-    private List<MultiItemView<SearchGoodsTypeBean.GoodsTypeListBean.GoodsListBean>> goodsDatas = new ArrayList<>();
+    private List<MultiItemView<SearchGoodsTypeBean.GoodsTypeListBean>> goodsDatas = new ArrayList<>();
 
     @Override
     protected int getContentId() {
@@ -63,17 +63,7 @@ public class SearchFragment extends BaseFragment {
         goodsAdapter = new SearchGoodsAdapter(getActivity(), goodsDatas);
         goodsList.setAdapter(goodsAdapter);
         final GridLayoutManager layoutManager=new GridLayoutManager(getActivity(), 3);
-        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                    if(goodsDatas.get(position).getItemType()==MultiItemView.TITLE){
-                        return 1;
-                    }else {
-                        return 3;
-                    }
 
-            }
-        });
         goodsList.setLayoutManager(layoutManager);
 
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -105,21 +95,14 @@ public class SearchFragment extends BaseFragment {
                 bean.getGoodsTypeList().get(0).setSelect(true);
                 typeDatas.add(bean.getGoodsTypeList().get(i));
 
-                MultiItemView<SearchGoodsTypeBean.GoodsTypeListBean.GoodsListBean> beanMultiItemViewTitle=new MultiItemView<>(MultiItemView.TITLE);
-                SearchGoodsTypeBean.GoodsTypeListBean.GoodsListBean goodsListBean=new SearchGoodsTypeBean.GoodsTypeListBean.GoodsListBean();
+                MultiItemView<SearchGoodsTypeBean.GoodsTypeListBean> beanMultiItemViewTitle=new MultiItemView<>(MultiItemView.TITLE);
+                SearchGoodsTypeBean.GoodsTypeListBean goodsListBean=new SearchGoodsTypeBean.GoodsTypeListBean();
                 goodsListBean.setTypeId(bean.getGoodsTypeList().get(i).getTypeId());
                 goodsListBean.setGoodsType(bean.getGoodsTypeList().get(i).getGoodsType());
+                goodsListBean.setGoodsList(bean.getGoodsTypeList().get(i).getGoodsList());
                 beanMultiItemViewTitle.setBean(goodsListBean);
                 goodsDatas.add(beanMultiItemViewTitle);
-
-                for (int j=0;j<bean.getGoodsTypeList().get(i).getGoodsList().size();j++){
-                    MultiItemView<SearchGoodsTypeBean.GoodsTypeListBean.GoodsListBean> beanMultiItemViewBody=new MultiItemView<>(MultiItemView.BODY);
-                    beanMultiItemViewBody.setBean(bean.getGoodsTypeList().get(i).getGoodsList().get(j));
-                    goodsDatas.add(beanMultiItemViewBody);
-                }
             }
-
-
         }
         typeAdapter.notifyDataSetChanged();
         goodsAdapter.notifyDataSetChanged();
