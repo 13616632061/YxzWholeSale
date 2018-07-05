@@ -16,4 +16,5 @@
     <color name="linegray">#EBEBEB</color>
     <color name="colorOrange">#FFFF00</color>
     <color name="red">#FF0000</color>
+    <color name="tv_color_gray">#787679</color>
 </resources>

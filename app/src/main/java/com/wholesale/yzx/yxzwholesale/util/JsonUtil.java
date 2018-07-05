@@ -26,7 +26,7 @@ public class JsonUtil {
         //使用IO流读取json文件内容
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-                    assetManager.open(fileName),"GB2312"));
+                    assetManager.open(fileName),"utf-8"));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line);

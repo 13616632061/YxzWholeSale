@@ -46,8 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp" />
     </RelativeLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
@@ -55,13 +54,18 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+        <com.cjj.MaterialRefreshLayout
+            android:layout_toRightOf="@+id/type_list"
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goods_list"
-            android:layout_weight="1"
-            android:layout_width="0dp"
             android:background="@color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+        </com.cjj.MaterialRefreshLayout>
+    </RelativeLayout>
 
 </LinearLayout>
