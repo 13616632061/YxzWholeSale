@@ -79,6 +79,7 @@ public class RecomendFragment extends BaseFragment {
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+                datas.clear();
                 getGoodslistData();
             }
 
