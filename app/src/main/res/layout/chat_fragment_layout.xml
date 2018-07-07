@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@color/bggray"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bggray"
+    android:orientation="vertical">
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
         android:gravity="center"
         android:text="推荐"
-        android:textSize="18sp"
-        android:background="@color/white"
         android:textColor="@color/text_color_title"
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:textSize="18sp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list"
-        android:layout_marginTop="1dp"
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"></android.support.v7.widget.RecyclerView>
+    </com.cjj.MaterialRefreshLayout>
 
 
 </LinearLayout>
