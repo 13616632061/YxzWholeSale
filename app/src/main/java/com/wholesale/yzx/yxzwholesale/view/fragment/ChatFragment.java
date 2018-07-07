@@ -98,7 +98,6 @@ public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnIte
             chatDatas.add(bean1);
         }
         chatMessageAdapter.notifyDataSetChanged();
-        refresh.finishRefresh();
     }
     /**
      * 商品列表数据
@@ -117,6 +116,8 @@ public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnIte
             }
         }
         goodsListAdapter.notifyDataSetChanged();
+        refresh.finishRefresh();
+
     }
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
