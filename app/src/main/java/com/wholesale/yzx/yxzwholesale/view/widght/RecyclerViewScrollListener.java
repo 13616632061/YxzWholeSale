@@ -1,8 +1,11 @@
 package com.wholesale.yzx.yxzwholesale.view.widght;
 
+import android.content.Context;
+import android.net.wifi.aware.PublishConfig;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TabHost;
 
 import com.wholesale.yzx.yxzwholesale.util.ScreenUtil;
 
@@ -10,9 +13,10 @@ import com.wholesale.yzx.yxzwholesale.util.ScreenUtil;
  * Created by lyf on 2018/7/7.
  */
 public abstract class RecyclerViewScrollListener extends RecyclerView.OnScrollListener {
-    private static final int SCROLL_DISTANCE = 300;
+    private static final int SCROLL_DISTANCE = 800;
     private int totalScrollDistance;
     private boolean isShow = false;
+
 
     @Override
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -24,11 +28,13 @@ public abstract class RecyclerViewScrollListener extends RecyclerView.OnScrollLi
         super.onScrolled(recyclerView, dx, dy);
         int firstVisableItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
         //当第一个item存在界面上时就不触发隐藏、显示操作
-        if(firstVisableItem==0){
-            return;
-        }
+
         if ((dy > 0 && !isShow) || (dy < 0 && isShow)) {
-            totalScrollDistance += dy;
+            if(firstVisableItem>0){
+                totalScrollDistance=0;
+            }else {
+                totalScrollDistance += dy;
+            }
         }
         Log.i("个人中心","totalScrollDistance: "+totalScrollDistance);
         if (totalScrollDistance > SCROLL_DISTANCE && !isShow) {

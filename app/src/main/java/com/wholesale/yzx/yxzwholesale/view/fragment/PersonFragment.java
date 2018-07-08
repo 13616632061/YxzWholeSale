@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -17,6 +18,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
+import com.wholesale.yzx.yxzwholesale.view.widght.CircleImageView;
 import com.wholesale.yzx.yxzwholesale.view.widght.RecyclerViewScrollListener;
 
 import java.util.ArrayList;
@@ -52,18 +54,22 @@ public class PersonFragment extends BaseFragment {
         super.init();
 
         View headView = View.inflate(getActivity(), R.layout.person_fragment_head_view, null);
+        CircleImageView iv_person_photo=headView.findViewById(R.id.iv_person_photo);
+        String URL="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3612952217,3851762239&fm=27&gp=0.jpg";
+        Glide.with(getActivity()).load(URL).into(iv_person_photo);
+
 
         goodsListAdapter = new GoodsListFragmentAdapter(getActivity(), R.layout.item_goods_list, goodDatas);
         list.setAdapter(goodsListAdapter);
         final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
-//        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-//            @Override
-//            public int getSpanSize(int position) {
-//                return (position == 0) ? layoutManager.getSpanCount() : 1;
-//            }
-//        });
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return (position == 0) ? layoutManager.getSpanCount() : 1;
+            }
+        });
         list.setLayoutManager(layoutManager);
-//        goodsListAdapter.addHeaderView(headView);
+        goodsListAdapter.addHeaderView(headView);
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
@@ -71,7 +77,6 @@ public class PersonFragment extends BaseFragment {
                 getGoodslistData();
             }
         });
-//        tvTitleBar.setAlpha(0);
         list.addOnScrollListener(new RecyclerViewScrollListener() {
             @Override
             public void hide() {
