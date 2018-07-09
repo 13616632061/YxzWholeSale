@@ -50,7 +50,7 @@ public class GoodsListFragment extends BaseFragment {
     public static List<String> goodsImageBanner;//广告轮播图数据
     private GoodsListFragmentAdapter adapter;//商品列表适配器
     private List<GoodsListBean.ListFreshTypeBean> datas = new ArrayList<>();//商品数据
-    private List<GoodsSecondTypeBean> secondTypeDatas = new ArrayList<>();//商品二级分类
+    private List<GoodsSecondTypeBean.TypeListBean> secondTypeDatas = new ArrayList<>();//商品二级分类
     private GoodsSecondTypeAdapter goodsSecondTypeAdapter;
     private int type = 0;//商品布局样式
 
@@ -144,56 +144,15 @@ public class GoodsListFragment extends BaseFragment {
     }
 
     private void getGoodsSecondTypeData() {
-        GoodsSecondTypeBean bean = new GoodsSecondTypeBean();
-        bean.setGoodsSecondTypeId(001);
-        bean.setGoodsSecondTypeName("限时秒杀");
-        bean.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean);
-        GoodsSecondTypeBean bean1 = new GoodsSecondTypeBean();
-        bean1.setGoodsSecondTypeId(002);
-        bean1.setGoodsSecondTypeName("品牌清仓");
-        bean1.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean1);
-        GoodsSecondTypeBean bean2 = new GoodsSecondTypeBean();
-        bean2.setGoodsSecondTypeId(003);
-        bean2.setGoodsSecondTypeName("名品折扣");
-        bean2.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean2);
-        GoodsSecondTypeBean bean3 = new GoodsSecondTypeBean();
-        bean3.setGoodsSecondTypeId(004);
-        bean3.setGoodsSecondTypeName("男人帮");
-        bean3.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean3);
-        GoodsSecondTypeBean bean4 = new GoodsSecondTypeBean();
-        bean4.setGoodsSecondTypeId(005);
-        bean4.setGoodsSecondTypeName("食品超市");
-        bean4.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean4);
-        GoodsSecondTypeBean bean5 = new GoodsSecondTypeBean();
-        bean5.setGoodsSecondTypeId(006);
-        bean5.setGoodsSecondTypeName("电视厨卫");
-        bean5.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean5);
-        GoodsSecondTypeBean bean6 = new GoodsSecondTypeBean();
-        bean6.setGoodsSecondTypeId(7);
-        bean6.setGoodsSecondTypeName("休闲零食");
-        bean6.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean6);
-        GoodsSecondTypeBean bean7 = new GoodsSecondTypeBean();
-        bean7.setGoodsSecondTypeId(8);
-        bean7.setGoodsSecondTypeName("纸品湿巾");
-        bean7.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean7);
-        GoodsSecondTypeBean bean8 = new GoodsSecondTypeBean();
-        bean8.setGoodsSecondTypeId(9);
-        bean8.setGoodsSecondTypeName("五金工具");
-        bean8.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean8);
-        GoodsSecondTypeBean bean9 = new GoodsSecondTypeBean();
-        bean9.setGoodsSecondTypeId(010);
-        bean9.setGoodsSecondTypeName("查看全部");
-        bean9.setGoodsSecondImageUrl("https://img10.360buyimg.com/babel/s300x300_jfs/t20401/236/194635593/326774/2e0cd2ed/5b027ba3N1088d700.jpg");
-        secondTypeDatas.add(bean9);
+        //得到本地json文本内容
+        String fileName = "all_type.json";
+        String json = JsonUtil.getJson(getActivity(), fileName);
+        GoodsSecondTypeBean bean=new Gson().fromJson(json,GoodsSecondTypeBean.class);
+        if(bean!=null){
+            for(GoodsSecondTypeBean.TypeListBean bean1:bean.getTypeList()){
+                secondTypeDatas.add(bean1);
+            }
+        }
         goodsSecondTypeAdapter.notifyDataSetChanged();
     }
 
