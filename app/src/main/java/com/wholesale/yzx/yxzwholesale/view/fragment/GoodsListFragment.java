@@ -1,5 +1,6 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsSecondTypeBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.WebViewActvity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsSecondTypeAdapter;
 import com.wholesale.yzx.yxzwholesale.view.widght.NetworkImageHolderView;
@@ -138,7 +140,8 @@ public class GoodsListFragment extends BaseFragment {
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(int position) {
-
+                        Intent intent=new Intent(getActivity(), WebViewActvity.class);
+                        startActivity(intent);
                     }
                 });
     }

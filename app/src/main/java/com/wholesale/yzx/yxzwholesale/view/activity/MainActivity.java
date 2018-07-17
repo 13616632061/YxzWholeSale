@@ -6,6 +6,8 @@ import android.widget.RadioGroup;
 
 import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
+import com.wholesale.yzx.yxzwholesale.sdk.MyReceiver;
+import com.wholesale.yzx.yxzwholesale.sdk.jpush.JpushNotifictionUtil;
 import com.wholesale.yzx.yxzwholesale.view.fragment.ChatFragment;
 import com.wholesale.yzx.yxzwholesale.view.fragment.IndexFragment;
 import com.wholesale.yzx.yxzwholesale.view.fragment.PersonFragment;
@@ -30,6 +32,13 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @InjectView(R.id.tab_person)
     RadioButton tabPerson;
 
+    public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
+    public static final String KEY_TITLE = "title";
+    public static final String KEY_MESSAGE = "message";
+    public static final String KEY_EXTRAS = "extras";
+    public static boolean isForeground;
+    private MyReceiver mMessageReceiver;
+
     @Override
     protected int getContentId() {
         return R.layout.activity_main;
@@ -39,9 +48,12 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     protected void init() {
         super.init();
 
+        JpushNotifictionUtil.customPushNotification(this,1,R.layout.custom_push_notification,R.drawable.icon_home2,R.drawable.icon_home2);
+
         tabsRg.setOnCheckedChangeListener(this);
         tabsRg.getChildAt(0).performClick();
     }
+
 
     // 设置底部导航栏图片的颜色和字体的颜色。
     private void setDrawable(RadioButton rb, int picture) {
