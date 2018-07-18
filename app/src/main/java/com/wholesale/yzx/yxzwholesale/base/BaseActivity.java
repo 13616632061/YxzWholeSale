@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wholesale.yzx.yxzwholesale.R;
@@ -93,7 +94,7 @@ public abstract class BaseActivity extends AppCompatActivity{
      * @param isGone 右边是否隐藏
      * @param rightText 右边
      */
-    public void initTitle(String title, boolean isGone, String rightText){
+    public void initTitle(String title, boolean isGone, String rightText,int drawable){
         if (title != null) {
             ((TextView) findViewById(R.id.title_ac_text)).setText(title); //
         }
@@ -103,6 +104,13 @@ public abstract class BaseActivity extends AppCompatActivity{
             findViewById(R.id.iv_title_text_right).setVisibility(View.VISIBLE);
             ((TextView) findViewById(R.id.iv_title_text_right)).setText(rightText);
 
+        }
+        if(isGone&&drawable!=0){
+            ImageView  imageView=findViewById(R.id.iv_titlle_image_right);
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setImageResource(drawable);
+        }else {
+            findViewById(R.id.iv_titlle_image_right).setVisibility(View.GONE);
         }
     }
     /**

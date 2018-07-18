@@ -1,18 +1,16 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -21,6 +19,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsSecondTypeBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.SecondTypeGoodsActivity;
 import com.wholesale.yzx.yxzwholesale.view.activity.WebViewActvity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsSecondTypeAdapter;
@@ -36,7 +35,7 @@ import butterknife.InjectView;
  * Created by Administrator on 2018/6/28.
  */
 
-public class GoodsListFragment extends BaseFragment {
+public class GoodsListFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
 
 
     @InjectView(R.id.list)
@@ -81,6 +80,7 @@ public class GoodsListFragment extends BaseFragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         list_goods_type.setLayoutManager(gridLayoutManager);
+        goodsSecondTypeAdapter.setOnItemClickListener(this);
 
 
         adapter = new GoodsListFragmentAdapter(getActivity(), R.layout.item_goods_list, datas);
@@ -203,11 +203,14 @@ public class GoodsListFragment extends BaseFragment {
         ButterKnife.reset(this);
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        if(adapter==goodsSecondTypeAdapter){
+            Intent intent=new Intent(getActivity(),SecondTypeGoodsActivity.class);
+            intent.putExtra("typeName",secondTypeDatas.get(position).getTypeName());
+            startActivity(intent);
+        }
+
     }
 }

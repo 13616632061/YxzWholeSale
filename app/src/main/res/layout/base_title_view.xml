@@ -62,4 +62,12 @@
         android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="12dp" />
+    <ImageView
+        android:id="@+id/iv_titlle_image_right"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:layout_width="38dp"
+        android:layout_height="38dp" />
 </RelativeLayout>

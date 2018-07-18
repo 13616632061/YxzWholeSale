@@ -1,4 +1,4 @@
-package com.wholesale.yzx.yxzwholesale.sdk;
+package com.wholesale.yzx.yxzwholesale.sdk.jpush;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

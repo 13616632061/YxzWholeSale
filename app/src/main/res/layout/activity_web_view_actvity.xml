@@ -4,11 +4,15 @@
     android:id="@+id/activity_web_view_actvity"
     android:background="@color/bggray"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wholesale.yzx.yxzwholesale.view.activity.WebViewActvity">
     <include
         layout="@layout/base_title_view"></include>
-
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
 
 </LinearLayout>

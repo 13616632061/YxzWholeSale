@@ -6,7 +6,6 @@ import android.widget.RadioGroup;
 
 import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
-import com.wholesale.yzx.yxzwholesale.sdk.MyReceiver;
 import com.wholesale.yzx.yxzwholesale.sdk.jpush.JpushNotifictionUtil;
 import com.wholesale.yzx.yxzwholesale.view.fragment.ChatFragment;
 import com.wholesale.yzx.yxzwholesale.view.fragment.IndexFragment;
@@ -32,12 +31,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @InjectView(R.id.tab_person)
     RadioButton tabPerson;
 
-    public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
-    public static final String KEY_TITLE = "title";
-    public static final String KEY_MESSAGE = "message";
-    public static final String KEY_EXTRAS = "extras";
-    public static boolean isForeground;
-    private MyReceiver mMessageReceiver;
 
     @Override
     protected int getContentId() {
