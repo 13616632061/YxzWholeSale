@@ -1,0 +1,162 @@
+{
+  "secondKillGoodsList": [
+    {
+      "time": "今日14：00",
+      "goodsList": [
+        {
+          "time": "今日14：00",
+          "goodsUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4113048887,754507111&fm=27&gp=0.jpg",
+          "name": "[买一送一]唐波虎奶",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "今日14：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1515229499,2804004726&fm=27&gp=0.jpg",
+          "name": "[莫高古道]青岛特供",
+          "peice": "99.9",
+          "stock": "16"
+        },
+        {
+          "time": "今日14：00",
+          "goodsUrl": "https://f11.baidu.com/it/u=2948811668,602204235&fm=72",
+          "name": "[手工肉松",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    },
+    {
+      "time": "今日16：00",
+      "goodsList": [
+        {
+          "time": "今日16：00",
+          "goodsUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3992952996,4161882608&fm=27&gp=0.jpg",
+          "name": "150g杏脯蜜饯",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "今日16：00",
+          "goodsUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4075530082,338225606&fm=27&gp=0.jpg",
+          "name": "[食津记]坚果炒货",
+          "peice": "6.4",
+          "stock": "16"
+        },
+        {
+          "time": "今日16：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3866508607,2742324374&fm=27&gp=0.jpg",
+          "name": "传统手工黑白芝麻",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    }
+  ,
+    {
+      "time": "今日18：00",
+      "goodsList": [
+        {
+          "time": "今日18：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=351479456,2100159617&fm=27&gp=0.jpg",
+          "name": "手工山药",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "今日18：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3837572215,2520714560&fm=27&gp=0.jpg",
+          "name": "冰红茶",
+          "peice": "12.4",
+          "stock": "16"
+        },
+        {
+          "time": "今日18：00",
+          "goodsUrl": "https://f11.baidu.com/it/u=2988289058,809299204&fm=72",
+          "name": "冰皮月饼",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    },
+    {
+      "time": "今日20：00",
+      "goodsList": [
+        {
+          "time": "今日20：00",
+          "goodsUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4113048887,754507111&fm=27&gp=0.jpg",
+          "name": "[买一送一]唐波虎奶",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "今日20：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1515229499,2804004726&fm=27&gp=0.jpg",
+          "name": "[莫高古道]青岛特供",
+          "peice": "99.9",
+          "stock": "16"
+        },
+        {
+          "time": "今日20：00",
+          "goodsUrl": "https://f11.baidu.com/it/u=2948811668,602204235&fm=72",
+          "name": "[手工肉松",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    },
+    {
+      "time": "今日22：00",
+      "goodsList": [
+        {
+          "time": "今日22：00",
+          "goodsUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3992952996,4161882608&fm=27&gp=0.jpg",
+          "name": "150g杏脯蜜饯",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "今日22：00",
+          "goodsUrl": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4075530082,338225606&fm=27&gp=0.jpg",
+          "name": "[食津记]坚果炒货",
+          "peice": "6.4",
+          "stock": "16"
+        },
+        {
+          "time": "今日22：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3866508607,2742324374&fm=27&gp=0.jpg",
+          "name": "传统手工黑白芝麻",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    }
+  ,
+    {
+      "time": "明日9：00",
+      "goodsList": [
+        {
+          "time": "明日9：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=351479456,2100159617&fm=27&gp=0.jpg",
+          "name": "手工山药",
+          "peice": "12.9",
+          "stock": "56"
+        },
+        {
+          "time": "明日9：00",
+          "goodsUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3837572215,2520714560&fm=27&gp=0.jpg",
+          "name": "冰红茶",
+          "peice": "12.4",
+          "stock": "16"
+        },
+        {
+          "time": "明日9：00",
+          "goodsUrl": "https://f11.baidu.com/it/u=2988289058,809299204&fm=72",
+          "name": "冰皮月饼",
+          "peice": "9.9",
+          "stock": "61"
+        }
+      ]
+    }
+  ]
+}
