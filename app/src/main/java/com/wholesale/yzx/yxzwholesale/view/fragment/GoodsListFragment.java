@@ -19,6 +19,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsSecondTypeBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.activity.SecondTypeGoodsActivity;
 import com.wholesale.yzx.yxzwholesale.view.activity.WebViewActvity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
@@ -205,10 +206,14 @@ public class GoodsListFragment extends BaseFragment implements BaseQuickAdapter.
 
 
     @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        if(adapter==goodsSecondTypeAdapter){
+    public void onItemClick(BaseQuickAdapter itemAdapter, View view, int position) {
+        if(itemAdapter==goodsSecondTypeAdapter){
             Intent intent=new Intent(getActivity(),SecondTypeGoodsActivity.class);
             intent.putExtra("typeName",secondTypeDatas.get(position).getTypeName());
+            startActivity(intent);
+        }
+        if(itemAdapter==adapter){
+            Intent intent=new Intent(getActivity(),GoodsDetailActivity.class);
             startActivity(intent);
         }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/bggray"
     android:layout_marginBottom="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -10,17 +10,20 @@
         android:gravity="center"
         android:textSize="14sp"
         android:textColor="@color/red"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="30dp" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/time_list"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/goods_list"
-        android:layout_marginTop="5dp"
+        android:paddingTop="5dp"
         android:layout_marginBottom="5dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>

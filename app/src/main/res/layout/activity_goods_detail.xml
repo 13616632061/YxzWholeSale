@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_goods_detail"
+    android:background="@color/bggray"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity">
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/base_title_view"></include>
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/list"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+   </android.support.v7.widget.RecyclerView>
+    </com.cjj.MaterialRefreshLayout>
+
+
+
+
+</RelativeLayout>
