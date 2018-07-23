@@ -34,7 +34,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/tv_price"
-            android:text="sdfasdfjasdfajfjak"
+            android:text="已拼25346件·2人拼单"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
@@ -42,12 +42,204 @@
             android:textSize="14sp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:text="sdfasdfasdfasdfasdfasdfa"
+            android:text="活动期间，买二送一"
             android:layout_marginRight="15dp"
             android:layout_below="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layout_promise"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:text="全场包邮"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="7天退货"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="24小时发货"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="假一赔十"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:drawableRight="@drawable/ic_gray_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_order_person_num"
+            android:text="65人在拼单"
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_look_more"
+            android:text="查看更多"
+            android:layout_marginRight="15dp"
+            android:drawablePadding="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/tv_color_gray"
+            android:drawableRight="@drawable/ic_gray_next"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.wholesale.yzx.yxzwholesale.view.widght.UPMarqueeView
+        android:id="@+id/arquee_v"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.wholesale.yzx.yxzwholesale.view.widght.UPMarqueeView>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_goods_evaluate"
+            android:text="商品评价（6035）"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/text_color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_look_all"
+            android:text="查看全部"
+            android:layout_marginRight="15dp"
+            android:drawablePadding="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/tv_color_gray"
+            android:drawableRight="@drawable/ic_gray_next"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout
+        android:id="@+id/warp_layout"
+        android:layout_marginTop="1dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:grivate="left"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_goods_evaluate"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_marginLeft="15dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+      <LinearLayout
+          android:layout_marginLeft="15dp"
+          android:layout_toRightOf="@+id/iv_logo"
+          android:orientation="vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="40dp">
+          <TextView
+              android:id="@+id/tv_shop_name"
+              android:text="美菱专卖店"
+              android:textSize="14sp"
+              android:textColor="@color/text_color_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+          <LinearLayout
+              android:layout_marginTop="5dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+              <TextView
+                  android:id="@+id/tv_goods_nums"
+                  android:textColor="@color/tv_color_gray"
+                  android:textSize="12sp"
+                  android:text="商品数量：37件"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
+              <TextView
+                  android:layout_marginLeft="15dp"
+                  android:textColor="@color/tv_color_gray"
+                  android:textSize="12sp"
+                  android:text="已拼：1000件"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
+          </LinearLayout>
 
+      </LinearLayout>
+        <TextView
+            android:id="@+id/tv_go_shop"
+            android:text="进店逛逛"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_title"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shop_goods_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:gravity="center_vertical"
+        android:text="商品详情"
+        android:textSize="14sp"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:textColor="@color/text_color_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+    <TextView
+        android:padding="15dp"
+        android:textSize="12sp"
+        android:textColor="@color/tv_color_gray"
+        android:layout_marginTop="1dp"
+        android:text="4颗星难度指数：3颗星有促销活动的话就一定要突出优惠的对比，原价多少，现价多少，还有多少赠品福利。促销活动需要仔细观察数据，衡量成本和收益。其中可以玩的手法还有限时特惠、前XX名福利、拼团福利等等细节手法，这里就不多说了。上面基本上把详情页的书写结构和逻辑撸了一遍，套用这个模板，基本上可以规模化产出合格的商品详情页及产品介绍了，希望对大家的工作有帮助"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="为你推荐"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 </LinearLayout>

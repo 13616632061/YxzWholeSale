@@ -49,7 +49,7 @@ public class GoodsListFragment extends BaseFragment implements BaseQuickAdapter.
     private ConvenientBanner convenientBanner;
 
     private String goodsTypeId;//商品分类id
-    public static List<String> goodsImageBanner;//广告轮播图数据
+    public  List<String> goodsImageBanner;//广告轮播图数据
     private GoodsListFragmentAdapter adapter;//商品列表适配器
     private List<GoodsListBean.ListFreshTypeBean> datas = new ArrayList<>();//商品数据
     private List<GoodsSecondTypeBean.TypeListBean> secondTypeDatas = new ArrayList<>();//商品二级分类
@@ -95,6 +95,7 @@ public class GoodsListFragment extends BaseFragment implements BaseQuickAdapter.
         });
         list.setLayoutManager(layoutManager);
         adapter.addHeaderView(headerView);
+        adapter.setOnItemClickListener(this);
 
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
