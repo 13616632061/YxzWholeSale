@@ -3,9 +3,11 @@ package com.wholesale.yzx.yxzwholesale.view.activity;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -20,6 +22,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
+import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.PellingOrderPopuWindow;
 import com.wholesale.yzx.yxzwholesale.view.widght.NetworkImageHolderView;
 import com.wholesale.yzx.yxzwholesale.view.widght.UPMarqueeView;
 import com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout;
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class GoodsDetailActivity extends BaseActivity {
 
@@ -40,23 +44,42 @@ public class GoodsDetailActivity extends BaseActivity {
     RecyclerView list;
     @InjectView(R.id.title_layout)
     View title_layout;
+    @InjectView(R.id.tv_bottom_more)
+    TextView tvBottomMore;
+    @InjectView(R.id.tv_collage)
+    TextView tvCollage;
+    @InjectView(R.id.tv_custom_service)
+    TextView tvCustomService;
+    @InjectView(R.id.tv_alone_price)
+    TextView tvAlonePrice;
+    @InjectView(R.id.alone_layout)
+    RelativeLayout aloneLayout;
+    @InjectView(R.id.tv_spell_price)
+    TextView tvSpellPrice;
+    @InjectView(R.id.spell_layout)
+    RelativeLayout spellLayout;
+    @InjectView(R.id.iv_title_text_right)
+    TextView ivTitleTextRight;
+    @InjectView(R.id.iv_titlle_image_right)
+    ImageView ivTitlleImageRight;
+    @InjectView(R.id.activity_goods_detail)
+    RelativeLayout activityGoodsDetail;
 
     private ConvenientBanner convenient_banner;
-    private LinearLayout layout_promise,layout_goods_evaluate;
-    private TextView tv_look_more,tv_look_all,tv_go_shop;
+    private LinearLayout layout_promise, layout_goods_evaluate;
+    private TextView tv_look_more, tv_look_all, tv_go_shop;
     private UPMarqueeView arquee_v;
     private WarpLinearLayout warp_layout;
     private ImageView iv_logo;
     private RecyclerView shop_goods_list;
 
-    private List<String> photoDatas=new ArrayList<>();
-    private List<View> views=new ArrayList<>();
-
+    private List<String> photoDatas = new ArrayList<>();
+    private List<View> views = new ArrayList<>();
 
 
     private GoodsListFragmentAdapter adapter;//商品列表适配器
     private List<GoodsListBean.ListFreshTypeBean> datas = new ArrayList<>();//商品数据
-    public  List<String> goodsImageBanner;//广告轮播图数据
+    public List<String> goodsImageBanner;//广告轮播图数据
 
 
     @Override
@@ -68,7 +91,7 @@ public class GoodsDetailActivity extends BaseActivity {
     protected void init() {
         super.init();
 
-        View headerView=View.inflate(GoodsDetailActivity.this,R.layout.goods_detail_headview,null);
+        View headerView = View.inflate(GoodsDetailActivity.this, R.layout.goods_detail_headview, null);
         initheaderView(headerView);
 
         adapter = new GoodsListFragmentAdapter(GoodsDetailActivity.this, R.layout.item_goods_list, datas);
@@ -97,42 +120,62 @@ public class GoodsDetailActivity extends BaseActivity {
     /**
      * 拼单数据
      */
-    private void initGoToOrder(){
+    private void initGoToOrder() {
         photoDatas.add("http://img4.imgtn.bdimg.com/it/u=2628386979,3922899995&fm=27&gp=0.jpg");
         photoDatas.add("http://img1.imgtn.bdimg.com/it/u=3328043160,1899669641&fm=27&gp=0.jpg");
         photoDatas.add("http://img4.imgtn.bdimg.com/it/u=3835798881,283752655&fm=27&gp=0.jpg");
 
-        for(int i=0;i<photoDatas.size();i=i+2){
-            View view=View.inflate(GoodsDetailActivity.this,R.layout.go_do_order_layout,null);
-            ImageView iv=view.findViewById(R.id.iv_photo);
-            ImageView iv2=view.findViewById(R.id.iv_photo2);
+        for (int i = 0; i < photoDatas.size(); i = i + 2) {
+            View view = View.inflate(GoodsDetailActivity.this, R.layout.go_do_order_layout, null);
+            ImageView iv = view.findViewById(R.id.iv_photo);
+            ImageView iv2 = view.findViewById(R.id.iv_photo2);
             Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i)).into(iv);
-            if(photoDatas.size()>i+1){
-                Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i+1)).into(iv2);
-            }else {
+            if (photoDatas.size() > i + 1) {
+                Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i + 1)).into(iv2);
+            } else {
                 view.findViewById(R.id.layout2).setVisibility(View.INVISIBLE);
             }
             views.add(view);
         }
         arquee_v.setViews(views);
     }
+
+    @OnClick({R.id.spell_layout, R.id.alone_layout, R.id.tv_bottom_more, R.id.tv_collage, R.id.tv_custom_service})
+    public void setOnClick(View view) {
+        switch (view.getId()) {
+            case R.id.spell_layout://拼单
+                PellingOrderPopuWindow popuWindow = new PellingOrderPopuWindow(GoodsDetailActivity.this);
+                popuWindow.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                break;
+            case R.id.alone_layout://单独购买
+                PellingOrderPopuWindow popuWindow2 = new PellingOrderPopuWindow(GoodsDetailActivity.this);
+                popuWindow2.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                break;
+            case R.id.tv_bottom_more://更多
+                break;
+            case R.id.tv_collage://收藏
+                break;
+            case R.id.tv_custom_service://客服
+                break;
+        }
+    }
+
     /**
      * 初始化头部
+     *
      * @param headerView
      */
     private void initheaderView(View headerView) {
-        convenient_banner=headerView.findViewById(R.id.convenient_banner);
-        layout_promise=headerView.findViewById(R.id.layout_promise);
-        layout_goods_evaluate=headerView.findViewById(R.id.layout_goods_evaluate);
-        tv_look_more=headerView.findViewById(R.id.tv_look_more);
-        tv_look_all=headerView.findViewById(R.id.tv_look_all);
-        tv_go_shop=headerView.findViewById(R.id.tv_go_shop);
-        arquee_v=headerView.findViewById(R.id.arquee_v);
-        warp_layout=headerView.findViewById(R.id.warp_layout);
-        iv_logo=headerView.findViewById(R.id.iv_logo);
-        shop_goods_list=headerView.findViewById(R.id.shop_goods_list);
-
-
+        convenient_banner = headerView.findViewById(R.id.convenient_banner);
+        layout_promise = headerView.findViewById(R.id.layout_promise);
+        layout_goods_evaluate = headerView.findViewById(R.id.layout_goods_evaluate);
+        tv_look_more = headerView.findViewById(R.id.tv_look_more);
+        tv_look_all = headerView.findViewById(R.id.tv_look_all);
+        tv_go_shop = headerView.findViewById(R.id.tv_go_shop);
+        arquee_v = headerView.findViewById(R.id.arquee_v);
+        warp_layout = headerView.findViewById(R.id.warp_layout);
+        iv_logo = headerView.findViewById(R.id.iv_logo);
+        shop_goods_list = headerView.findViewById(R.id.shop_goods_list);
 
 
         showConvenientBanner();
@@ -144,8 +187,8 @@ public class GoodsDetailActivity extends BaseActivity {
     /**
      * 初始化店铺商品
      */
-    private void initShopGoodsData(){
-        String logo="http://img2.imgtn.bdimg.com/it/u=2971196485,2046477827&fm=27&gp=0.jpg";
+    private void initShopGoodsData() {
+        String logo = "http://img2.imgtn.bdimg.com/it/u=2971196485,2046477827&fm=27&gp=0.jpg";
         Glide.with(GoodsDetailActivity.this).load(logo).into(iv_logo);
 
         List<GoodsListBean.ListFreshTypeBean> shop_goods_datas = new ArrayList<>();//商品数据
@@ -154,21 +197,22 @@ public class GoodsDetailActivity extends BaseActivity {
         shop_goods_datas.add(datas.get(2));
         GoodsListFragmentAdapter adapter = new GoodsListFragmentAdapter(GoodsDetailActivity.this, R.layout.item_goods_list, shop_goods_datas);
         shop_goods_list.setAdapter(adapter);
-        shop_goods_list.setLayoutManager(new GridLayoutManager(this,3));
+        shop_goods_list.setLayoutManager(new GridLayoutManager(this, 3));
     }
+
     /**
      * 初始化评论数据
      */
-    private void initCommentData(){
-        List<String> commentDatas=new ArrayList<>();
+    private void initCommentData() {
+        List<String> commentDatas = new ArrayList<>();
         commentDatas.add("质量好（65）");
         commentDatas.add("快递速度快（27）");
         commentDatas.add("服务好（8）");
 
         warp_layout.removeAllViews();
-        for(int i=0;i<commentDatas.size();i++){
-            View view=View.inflate(GoodsDetailActivity.this,R.layout.goods_comment_type_layout,null);
-            TextView tv_comment_type=view.findViewById(R.id.tv_comment_type);
+        for (int i = 0; i < commentDatas.size(); i++) {
+            View view = View.inflate(GoodsDetailActivity.this, R.layout.goods_comment_type_layout, null);
+            TextView tv_comment_type = view.findViewById(R.id.tv_comment_type);
             tv_comment_type.setText(commentDatas.get(i));
 
             tv_comment_type.setOnClickListener(new View.OnClickListener() {
@@ -181,14 +225,15 @@ public class GoodsDetailActivity extends BaseActivity {
         }
 
         layout_goods_evaluate.removeAllViews();
-        for(int i=0;i<2;i++){
-            View view=View.inflate(GoodsDetailActivity.this,R.layout.item_goods_comment,null);
-            ImageView iv_commenter_photo=view.findViewById(R.id.iv_commenter_photo);
+        for (int i = 0; i < 2; i++) {
+            View view = View.inflate(GoodsDetailActivity.this, R.layout.item_goods_comment, null);
+            ImageView iv_commenter_photo = view.findViewById(R.id.iv_commenter_photo);
             Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i)).into(iv_commenter_photo);
 
             layout_goods_evaluate.addView(view);
         }
     }
+
     /**
      * 广告轮播图
      */
@@ -220,6 +265,7 @@ public class GoodsDetailActivity extends BaseActivity {
                     }
                 });
     }
+
     /**
      * 商品列表数据
      */
@@ -230,15 +276,16 @@ public class GoodsDetailActivity extends BaseActivity {
         GoodsListBean bean = new Gson().fromJson(json, GoodsListBean.class);
         if (bean != null) {
             for (GoodsListBean.ListFreshTypeBean bean1 : bean.getListFreshType()) {
-                    bean1.setShowPellNum(false);
-                    bean1.setShowPellBtn(false);
-                    datas.add(bean1);
+                bean1.setShowPellNum(false);
+                bean1.setShowPellBtn(false);
+                datas.add(bean1);
             }
         }
         adapter.notifyDataSetChanged();
         refresh.finishRefresh();
         initShopGoodsData();
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -250,4 +297,6 @@ public class GoodsDetailActivity extends BaseActivity {
         super.onPause();
         convenient_banner.stopTurning();
     }
+
+
 }
