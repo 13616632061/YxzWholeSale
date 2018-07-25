@@ -1,5 +1,6 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -17,6 +19,7 @@ import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.widght.CircleImageView;
 import com.wholesale.yzx.yxzwholesale.view.widght.RecyclerViewScrollListener;
@@ -31,7 +34,7 @@ import butterknife.InjectView;
  * Created by Administrator on 2018/6/28.
  */
 
-public class PersonFragment extends BaseFragment {
+public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
 
     @InjectView(R.id.list)
     RecyclerView list;
@@ -61,6 +64,7 @@ public class PersonFragment extends BaseFragment {
 
         goodsListAdapter = new GoodsListFragmentAdapter(getActivity(), R.layout.item_goods_list, goodDatas);
         list.setAdapter(goodsListAdapter);
+        goodsListAdapter.setOnItemClickListener(this);
         final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -128,5 +132,11 @@ public class PersonFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Intent intent=new Intent(getActivity(),GoodsDetailActivity.class);
+        startActivity(intent);
     }
 }

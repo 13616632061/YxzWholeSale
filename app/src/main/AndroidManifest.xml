@@ -202,7 +202,8 @@
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".view.activity.SecondTypeGoodsActivity" />
-        <activity android:name=".view.activity.GoodsDetailActivity"></activity>
+        <activity android:name=".view.activity.GoodsDetailActivity" />
+        <activity android:name=".view.activity.OrderPayActivity"></activity>
     </application>
 
 </manifest>

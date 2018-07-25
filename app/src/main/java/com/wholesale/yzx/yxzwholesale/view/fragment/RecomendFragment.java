@@ -1,10 +1,12 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -12,6 +14,7 @@ import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 
 import java.util.ArrayList;
@@ -23,7 +26,7 @@ import butterknife.InjectView;
  * Created by Administrator on 2018/6/28.
  */
 
-public class RecomendFragment extends BaseFragment {
+public class RecomendFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
 
 
     @InjectView(R.id.list)
@@ -50,6 +53,7 @@ public class RecomendFragment extends BaseFragment {
 
         adapter=new GoodsListFragmentAdapter(getActivity(),R.layout.item_goods_list,datas);
         list.setAdapter(adapter);
+        adapter.setOnItemClickListener(this);
 
         final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -110,5 +114,11 @@ public class RecomendFragment extends BaseFragment {
         }
         adapter.notifyDataSetChanged();
         refresh.finishRefresh();
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Intent intent=new Intent(getActivity(),GoodsDetailActivity.class);
+        startActivity(intent);
     }
 }

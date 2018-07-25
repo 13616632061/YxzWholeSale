@@ -1,13 +1,11 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
@@ -18,20 +16,20 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.ChatMessageBean;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.ChatMessageAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
  * Created by Administrator on 2018/6/28.
  */
 
-public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnItemChildClickListener {
+public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnItemChildClickListener, BaseQuickAdapter.OnItemClickListener {
 
     @InjectView(R.id.list)
     RecyclerView list;
@@ -60,6 +58,7 @@ public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnIte
 
         goodsListAdapter=new GoodsListFragmentAdapter(getActivity(),R.layout.item_goods_list,goodDatas);
         goods_list.setAdapter(goodsListAdapter);
+        goodsListAdapter.setOnItemClickListener(this);
 
         final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
         goods_list.setLayoutManager(layoutManager);
@@ -123,5 +122,11 @@ public class ChatFragment extends BaseFragment implements BaseQuickAdapter.OnIte
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
         chatDatas.remove(position);
         chatMessageAdapter.notifyItemRemoved(position);
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Intent intent=new Intent(getActivity(),GoodsDetailActivity.class);
+        startActivity(intent);
     }
 }

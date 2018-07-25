@@ -39,4 +39,15 @@
         <item name="vertical_Space">20dp</item>
         <item name="isFull">false</item>
     </style>
+
+    <!-- 从下往上进，上往下退出 -->
+    <style name="AnimationWindow">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <!-- 从下往上进，左往右退出 -->
+    <style name="AnimationWindow_Share">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_right_out</item>
+    </style>
 </resources>

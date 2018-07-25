@@ -1,5 +1,6 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +17,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.MultiItemView;
 import com.wholesale.yzx.yxzwholesale.bean.SearchGoodsTypeBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.SecondTypeGoodsActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.SearchGoodsAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.SearchGoodsTypeAdapter;
 
@@ -65,6 +67,7 @@ public class SearchFragment extends BaseFragment implements BaseQuickAdapter.OnI
         goodsAdapter = new SearchGoodsAdapter(getActivity(), goodsDatas);
         goodsList.setAdapter(goodsAdapter);
         goodsList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        goodsAdapter.setOnItemClickListener(this);
 
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
@@ -151,22 +154,29 @@ public class SearchFragment extends BaseFragment implements BaseQuickAdapter.OnI
 
     /**
      * 分类点击事件
-     * @param adapter
+     * @param itemAdapter
      * @param view
      * @param position
      */
     @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        for(int i=0;i<typeDatas.size();i++){
-            typeDatas.get(i).setSelect(false);
-        }
-        typeDatas.get(position).setSelect(true);
-        typeAdapter.notifyDataSetChanged();
+    public void onItemClick(BaseQuickAdapter itemAdapter, View view, int position) {
+        if(itemAdapter==goodsAdapter){
+            Intent intent=new Intent(getActivity(),SecondTypeGoodsActivity.class);
+            intent.putExtra("typeName",goodsDatas.get(position).getBean().getGoodsType());
+            startActivity(intent);
 
-        if (position == 0) {
-            goodsList.smoothScrollToPosition(0);
         }else {
-            goodsList.smoothScrollToPosition(2*position+1);
+            for(int i=0;i<typeDatas.size();i++){
+                typeDatas.get(i).setSelect(false);
+            }
+            typeDatas.get(position).setSelect(true);
+            typeAdapter.notifyDataSetChanged();
+
+            if (position == 0) {
+                goodsList.smoothScrollToPosition(0);
+            }else {
+                goodsList.smoothScrollToPosition(2*position+1);
+            }
         }
     }
 

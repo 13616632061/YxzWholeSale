@@ -10,6 +10,8 @@
         android:paddingTop="3dp"
         android:paddingBottom="3dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/text_color_title"
         android:textSize="14sp"
         android:background="@drawable/bg_pink_redus5"

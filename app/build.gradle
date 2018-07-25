@@ -62,5 +62,7 @@ android {
 
         compile 'cn.jiguang.sdk:jpush:3.1.1'
         compile 'cn.jiguang.sdk:jcore:1.2.1'
+
+        compile 'org.raphets:roundimageview:1.2.0'
     }
 }
