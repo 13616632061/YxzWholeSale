@@ -203,7 +203,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".view.activity.SecondTypeGoodsActivity" />
         <activity android:name=".view.activity.GoodsDetailActivity" />
-        <activity android:name=".view.activity.OrderPayActivity"></activity>
+        <activity android:name=".view.activity.OrderPayActivity" />
+        <activity android:name=".view.activity.OrderSureActivity" />
+        <activity android:name=".view.activity.FriendPayActivity" />
+        <activity android:name=".view.activity.GoodsCommentAcitvity"></activity>
     </application>
 
 </manifest>

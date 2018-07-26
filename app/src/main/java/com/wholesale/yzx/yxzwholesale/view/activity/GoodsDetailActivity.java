@@ -1,6 +1,8 @@
 package com.wholesale.yzx.yxzwholesale.view.activity;
 
 
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -14,6 +16,7 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -22,6 +25,8 @@ import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
+import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.GoPellingOrderPopuWindow;
+import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.MorePellingOrderInfoPopuWindow;
 import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.PellingOrderPopuWindow;
 import com.wholesale.yzx.yxzwholesale.view.widght.NetworkImageHolderView;
 import com.wholesale.yzx.yxzwholesale.view.widght.UPMarqueeView;
@@ -33,7 +38,7 @@ import java.util.List;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class GoodsDetailActivity extends BaseActivity {
+public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapter.OnItemClickListener, View.OnClickListener {
 
 
     @InjectView(R.id.refresh)
@@ -81,6 +86,18 @@ public class GoodsDetailActivity extends BaseActivity {
     private List<GoodsListBean.ListFreshTypeBean> datas = new ArrayList<>();//商品数据
     public List<String> goodsImageBanner;//广告轮播图数据
 
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    PellingOrderPopuWindow popuWindow2 = new PellingOrderPopuWindow(GoodsDetailActivity.this);
+                    popuWindow2.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                    break;
+            }
+        }
+    };
 
     @Override
     protected int getContentId() {
@@ -90,7 +107,7 @@ public class GoodsDetailActivity extends BaseActivity {
     @Override
     protected void init() {
         super.init();
-
+        initTitle("商品详情",true,"",R.drawable.share);
         View headerView = View.inflate(GoodsDetailActivity.this, R.layout.goods_detail_headview, null);
         initheaderView(headerView);
 
@@ -104,6 +121,7 @@ public class GoodsDetailActivity extends BaseActivity {
             }
         });
         list.setLayoutManager(layoutManager);
+        adapter.setOnItemClickListener(this);
         adapter.addHeaderView(headerView);
 
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -129,18 +147,23 @@ public class GoodsDetailActivity extends BaseActivity {
             View view = View.inflate(GoodsDetailActivity.this, R.layout.go_do_order_layout, null);
             ImageView iv = view.findViewById(R.id.iv_photo);
             ImageView iv2 = view.findViewById(R.id.iv_photo2);
+            TextView tv_goto_order1=view.findViewById(R.id.tv_goto_order1);
+            TextView tv_goto_order2=view.findViewById(R.id.tv_goto_order2);
             Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i)).into(iv);
             if (photoDatas.size() > i + 1) {
                 Glide.with(GoodsDetailActivity.this).load(photoDatas.get(i + 1)).into(iv2);
             } else {
                 view.findViewById(R.id.layout2).setVisibility(View.INVISIBLE);
             }
+            tv_goto_order1.setOnClickListener(this);
+            tv_goto_order2.setOnClickListener(this);
+
             views.add(view);
         }
         arquee_v.setViews(views);
     }
 
-    @OnClick({R.id.spell_layout, R.id.alone_layout, R.id.tv_bottom_more, R.id.tv_collage, R.id.tv_custom_service})
+    @OnClick({R.id.spell_layout, R.id.alone_layout, R.id.tv_bottom_more, R.id.tv_collage, R.id.tv_custom_service,R.id.iv_title_text_left2})
     public void setOnClick(View view) {
         switch (view.getId()) {
             case R.id.spell_layout://拼单
@@ -157,9 +180,31 @@ public class GoodsDetailActivity extends BaseActivity {
                 break;
             case R.id.tv_custom_service://客服
                 break;
+            case R.id.iv_title_text_left2://返回
+                finish();
+                break;
         }
     }
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_goto_order1:
+                GoPellingOrderPopuWindow popuWindow1 = new GoPellingOrderPopuWindow(GoodsDetailActivity.this,handler);
+                popuWindow1.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                break;
+            case R.id.tv_goto_order2:
+                GoPellingOrderPopuWindow popuWindow2= new GoPellingOrderPopuWindow(GoodsDetailActivity.this,handler);
+                popuWindow2.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                break;
+            case R.id.tv_look_more:
+                MorePellingOrderInfoPopuWindow morePellingOrderInfoPopuWindow=new MorePellingOrderInfoPopuWindow(GoodsDetailActivity.this);
+                morePellingOrderInfoPopuWindow.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
+                break;
+            case R.id.tv_look_all:
+                
+                break;
+        }
+    }
     /**
      * 初始化头部
      *
@@ -181,6 +226,8 @@ public class GoodsDetailActivity extends BaseActivity {
         showConvenientBanner();
         initGoToOrder();
         initCommentData();
+
+        tv_look_more.setOnClickListener(this);
 
     }
 
@@ -298,5 +345,9 @@ public class GoodsDetailActivity extends BaseActivity {
         convenient_banner.stopTurning();
     }
 
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+    }
 
 }

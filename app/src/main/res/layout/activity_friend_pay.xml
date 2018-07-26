@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_friend_pay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.wholesale.yzx.yxzwholesale.view.activity.FriendPayActivity">
+
+    <include layout="@layout/base_title_view"></include>
+
+    <include layout="@layout/base_line_layout"></include>
+
+    <org.raphets.roundimageview.RoundImageView
+        android:id="@+id/iv_person_photo"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:background="@color/bggray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/text_color_title"
+            android:text="您的代付订单已经创建成功，赶快发给好友帮您付款吧"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@color/tv_color_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <ImageView
+                android:id="@+id/iv_goods_photo"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_gray_next"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+            <TextView
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="[富贵鸟正品]短裤运动纯棉七分五分库休闲夏季宽松 白色 型号：L"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_goods_photo"
+                android:layout_toLeftOf="@+id/iv_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:text="￥59.9"
+        android:textSize="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/text_color_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/bg_red_redus5"
+        android:textColor="@color/white"
+        android:text="发送给微信好友"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textColor="@color/tv_color_gray"
+        android:layout_gravity="center_horizontal"
+        android:text="如果订单申请退款，已支付金额将原路退还给您的好友"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

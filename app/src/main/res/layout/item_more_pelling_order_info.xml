@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="61dp"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <org.raphets.roundimageview.RoundImageView
+            android:id="@+id/iv_photo"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_photo"
+            android:id="@+id/tv_name"
+            android:text="希望"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_name"
+            android:text="还差1人"
+            android:textSize="12sp"
+            android:textColor="@color/tv_color_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_name"
+            android:layout_toRightOf="@+id/iv_photo"
+            android:text="剩余21：24：36"
+            android:textSize="12sp"
+            android:textColor="@color/tv_color_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="去拼单"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_red_redus5"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="55dp"
+            android:layout_height="25dp" />
+    </RelativeLayout>
+
+    <include layout="@layout/base_line_layout"></include>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.wholesale.yzx.yxzwholesale.view.activity;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -42,6 +43,7 @@ public class OrderPayActivity extends BaseActivity implements View.OnClickListen
 
     private OrderPayAdapter adapter;
     private List<MultiItemView<OrderPayGoodsBean.GoodsShopInfoBean>> datas=new ArrayList<>();
+    private int  payType=0;
 
     @Override
     protected int getContentId() {
@@ -101,11 +103,20 @@ public class OrderPayActivity extends BaseActivity implements View.OnClickListen
     }
 
 
-    @OnClick({R.id.iv_title_text_left2})
+    @OnClick({R.id.iv_title_text_left2,R.id.tv_pay})
     public void setOnClick(View view){
       switch (view.getId()){
           case R.id.iv_title_text_left2:
               finish();
+              break;
+          case R.id.tv_pay:
+            if(payType==1){
+                Intent intent=new Intent(OrderPayActivity.this,FriendPayActivity.class);
+                startActivity(intent);
+            }else {
+                Intent intent=new Intent(OrderPayActivity.this,OrderSureActivity.class);
+                startActivity(intent);
+            }
               break;
       }
   }
@@ -137,24 +148,28 @@ public class OrderPayActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.layout_weixin:
+                payType=0;
                 iv_selsect_weixin.setVisibility(View.VISIBLE);
                 iv_select_weixin_friend.setVisibility(View.GONE);
                 iv_select_zhifubao.setVisibility(View.GONE);
                 iv_select_qq.setVisibility(View.GONE);
                 break;
             case R.id.layout_select_weixin_friend:
+                payType=1;
                 iv_selsect_weixin.setVisibility(View.GONE);
                 iv_select_weixin_friend.setVisibility(View.VISIBLE);
                 iv_select_zhifubao.setVisibility(View.GONE);
                 iv_select_qq.setVisibility(View.GONE);
                 break;
             case R.id.layout_select_zhifubao:
+                payType=2;
                 iv_selsect_weixin.setVisibility(View.GONE);
                 iv_select_weixin_friend.setVisibility(View.GONE);
                 iv_select_zhifubao.setVisibility(View.VISIBLE);
                 iv_select_qq.setVisibility(View.GONE);
                 break;
             case R.id.layout_select_qq:
+                payType=3;
                 iv_selsect_weixin.setVisibility(View.GONE);
                 iv_select_weixin_friend.setVisibility(View.GONE);
                 iv_select_zhifubao.setVisibility(View.GONE);

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pell_order_popu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_centerInParent="true"
+        android:layout_width="295dp"
+        android:layout_height="220dp">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="275dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_whilte_redus15"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:text="参与张三的拼单"
+            android:textColor="@color/text_color_title"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="仅剩1个名额，23：59：59后结束"
+            android:textColor="@color/tv_color_gray"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp">
+
+            <org.raphets.roundimageview.RoundImageView
+                android:id="@+id/iv_image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <org.raphets.roundimageview.RoundImageView
+                android:id="@+id/iv_image2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_go_pelling_order"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_red_redus5"
+            android:text="参与拼单"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_gravity="right"
+        android:id="@+id/iv_close"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/circle_close" />
+    </FrameLayout>
+</RelativeLayout>
