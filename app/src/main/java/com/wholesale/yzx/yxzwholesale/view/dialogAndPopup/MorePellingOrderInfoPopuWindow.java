@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.google.gson.Gson;
@@ -26,7 +27,7 @@ import java.util.List;
  * Created by Administrator on 2018/7/26.
  */
 
-public class MorePellingOrderInfoPopuWindow extends PopupWindow implements View.OnClickListener {
+public class MorePellingOrderInfoPopuWindow extends PopupWindow implements View.OnClickListener, BaseQuickAdapter.OnItemChildClickListener {
 
     private Context context;
     private ImageView iv_close;
@@ -83,6 +84,7 @@ public class MorePellingOrderInfoPopuWindow extends PopupWindow implements View.
         adapter=new MorePellingOrderInfoAdapter(context,R.layout.item_more_pelling_order_info,datas);
         list.setAdapter(adapter);
         list.setLayoutManager(new LinearLayoutManager(context));
+        adapter.setOnItemChildClickListener(this);
 
         iv_close.setOnClickListener(this);
         getGoodslistData();
@@ -119,5 +121,10 @@ public class MorePellingOrderInfoPopuWindow extends PopupWindow implements View.
         }
         adapter.notifyDataSetChanged();
         refresh.finishRefresh();
+    }
+
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
     }
 }

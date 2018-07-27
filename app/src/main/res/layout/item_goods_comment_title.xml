@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="60dp">
+    <org.raphets.roundimageview.RoundImageView
+        android:id="@+id/iv_commenter_photo"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/tv_commenter_name"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_title"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/iv_commenter_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_comment_time"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textSize="14sp"
+        android:textColor="@color/tv_color_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

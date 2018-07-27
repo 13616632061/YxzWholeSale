@@ -1,6 +1,7 @@
 package com.wholesale.yzx.yxzwholesale.view.activity;
 
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
@@ -24,6 +25,7 @@ import com.wholesale.yzx.yxzwholesale.R;
 import com.wholesale.yzx.yxzwholesale.base.BaseActivity;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.util.ScreenUtil;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.GoPellingOrderPopuWindow;
 import com.wholesale.yzx.yxzwholesale.view.dialogAndPopup.MorePellingOrderInfoPopuWindow;
@@ -201,7 +203,8 @@ public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapte
                 morePellingOrderInfoPopuWindow.showAtLocation(activityGoodsDetail, Gravity.NO_GRAVITY, 0, 0);
                 break;
             case R.id.tv_look_all:
-                
+                Intent intent=new Intent(GoodsDetailActivity.this,GoodsCommentAcitvity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -228,6 +231,7 @@ public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapte
         initCommentData();
 
         tv_look_more.setOnClickListener(this);
+        tv_look_all.setOnClickListener(this);
 
     }
 
@@ -268,6 +272,8 @@ public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapte
 
                 }
             });
+            warp_layout.setHorizontal_Space(ScreenUtil.dp2px(GoodsDetailActivity.this,8));
+            warp_layout.setVertical_Space(ScreenUtil.dp2px(GoodsDetailActivity.this,8));
             warp_layout.addView(view);
         }
 

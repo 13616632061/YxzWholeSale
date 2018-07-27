@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout
+        android:padding="15dp"
+        android:id="@+id/warp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:grivate="left"></com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_more"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:gravity="center">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_more"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/icon_pull_down" />-->
+    <!--</LinearLayout>-->
+
+    <include layout="@layout/base_line_layout"></include>
+</LinearLayout>

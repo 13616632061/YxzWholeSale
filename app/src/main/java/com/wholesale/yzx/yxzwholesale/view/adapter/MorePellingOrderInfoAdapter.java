@@ -31,5 +31,7 @@ public class MorePellingOrderInfoAdapter extends BaseQuickAdapter<MorePellingOrd
         Glide.with(context).load(item.getPhoto()).into(iv_photo);
         helper.setText(R.id.tv_name,item.getName());
 
+        helper.addOnClickListener(R.id.tv_go_pell_order);
+
     }
 }

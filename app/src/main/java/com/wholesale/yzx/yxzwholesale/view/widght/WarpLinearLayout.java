@@ -19,6 +19,7 @@ public class WarpLinearLayout extends ViewGroup {
 
     private Type mType;
     private List<WarpLine> mWarpLineGroup;
+    private int lineCount;
 
     public WarpLinearLayout(Context context) {
         this(context, null);
@@ -134,6 +135,8 @@ public class WarpLinearLayout extends ViewGroup {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         t = getPaddingTop();
+        //设置行数
+        setLineCount(mWarpLineGroup.size());
         for (int i = 0; i < mWarpLineGroup.size(); i++) {
             int left = getPaddingLeft();
             WarpLine warpLine = mWarpLineGroup.get(i);
@@ -217,6 +220,15 @@ public class WarpLinearLayout extends ViewGroup {
             vertical_Space = typedArray.getDimension(R.styleable.WarpLinearLayout_vertical_Space, vertical_Space);
             isFull = typedArray.getBoolean(R.styleable.WarpLinearLayout_isFull, isFull);
         }
+    }
+
+
+    public int getLineCount() {
+        return lineCount;
+    }
+
+    public void setLineCount(int lineCount) {
+        this.lineCount = lineCount;
     }
 
     public int getGrivate() {

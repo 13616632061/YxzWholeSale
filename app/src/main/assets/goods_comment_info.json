@@ -1,0 +1,32 @@
+{
+  "goodsCommentList": [
+    {
+      "commenterPhoto": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1114957251,3704468764&fm=27&gp=0.jpg",
+      "commenterName": "至善",
+      "commentTime": "2018.07.27",
+      "commentContent": "很不错，喜欢",
+      "commentImage": [
+        {
+          "imageUrl": "http://img5.imgtn.bdimg.com/it/u=1571428641,1791014462&fm=27&gp=0.jpg"
+        }
+      ]
+    },
+    {
+      "commenterPhoto": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532603607881&di=162c853d44b0b38ebbe08008ed0e5574&imgtype=0&src=http%3A%2F%2Fimg07.tooopen.com%2Fimages%2F20170630%2Ftooopen_sy_215154486418.jpg",
+      "commenterName": "妖娆的毒药",
+      "commentTime": "2018.07.28",
+      "commentContent": "很满意。都挺好的",
+      "commentImage": [
+        {
+          "imageUrl": "http://img5.imgtn.bdimg.com/it/u=1660719847,2128667878&fm=27&gp=0.jpg"
+        },
+        {
+          "imageUrl": "http://img4.imgtn.bdimg.com/it/u=2500434987,4293101441&fm=27&gp=0.jpg"
+        },
+        {
+          "imageUrl": "http://img5.imgtn.bdimg.com/it/u=1628196423,51417386&fm=27&gp=0.jpg"
+        }
+      ]
+    }
+  ]
+}
