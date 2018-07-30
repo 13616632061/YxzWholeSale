@@ -206,6 +206,10 @@ public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapte
                 Intent intent=new Intent(GoodsDetailActivity.this,GoodsCommentAcitvity.class);
                 startActivity(intent);
                 break;
+            case R.id.tv_go_shop:
+                Intent intent_go_store=new Intent(GoodsDetailActivity.this,GoodsStoreInfoActivity.class);
+                startActivity(intent_go_store);
+                break;
         }
     }
     /**
@@ -232,6 +236,7 @@ public class GoodsDetailActivity extends BaseActivity implements BaseQuickAdapte
 
         tv_look_more.setOnClickListener(this);
         tv_look_all.setOnClickListener(this);
+        tv_go_shop.setOnClickListener(this);
 
     }
 

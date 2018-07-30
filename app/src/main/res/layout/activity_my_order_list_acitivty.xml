@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_order_list_acitivty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bggray"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.wholesale.yzx.yxzwholesale.view.activity.MyOrderListAcitivty">
+
+    <include layout="@layout/base_title_view"></include>
+
+    <com.nshmura.recyclertablayout.RecyclerTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        app:rtl_tabIndicatorColor="@color/red"
+        app:rtl_tabSelectedTextColor="@color/red"></com.nshmura.recyclertablayout.RecyclerTabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+</LinearLayout>

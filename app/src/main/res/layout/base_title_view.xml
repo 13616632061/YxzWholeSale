@@ -66,8 +66,8 @@
         android:id="@+id/iv_titlle_image_right"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="15dp"
         android:gravity="center"
-        android:layout_width="25dp"
-        android:layout_height="25dp" />
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
 </RelativeLayout>

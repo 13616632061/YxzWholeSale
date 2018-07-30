@@ -1,174 +1,176 @@
-{"listFreshType":[
+{
+  "listFreshType": [
     {
-        "goodsID":"2",
-        "classID":"1",
-        "goodsName":"韩都衣舍韩版2015秋装新款女装翻领绣花图案长袖衬衫",
-        "goodsListImg":"https:////img.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/i4/TB1vGO5IFXXXXb4XXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg",
-        "price":"260",
-        "discount":"6",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://ohe65w0xx.bkt.clouddn.com/u=2263418180,3668836868&fm=206&gp=0.jpg"
-            }
-        ]
+      "goodsID": "2",
+      "classID": "1",
+      "goodsName": "韩都衣舍韩版2015秋装新款女装翻领绣花图案长袖衬衫",
+      "goodsListImg": "https:////img.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/i4/TB1vGO5IFXXXXb4XXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg",
+      "price": "260",
+      "discount": "6",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://ohe65w0xx.bkt.clouddn.com/u=2263418180,3668836868&fm=206&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"3",
-        "classID":"1",
-        "goodsName":"韩都衣舍长袖衬衫",
-        "goodsListImg":"http://img.alicdn.com/bao/uploaded/i4/TB1QP0gJpXXXXczXpXXXXXXXXXX_!!0-item_pic.jpg_b.jpg",
-        "price":"198",
-        "discount":"0",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://ohe65w0xx.bkt.clouddn.com/u=2263418180,3668836868&fm=206&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://ohe65w0xx.bkt.clouddn.com/u=3637404049,2821183587&fm=214&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://ohe65w0xx.bkt.clouddn.com/avert.png"
-            }
-        ]
+      "goodsID": "3",
+      "classID": "1",
+      "goodsName": "韩都衣舍长袖衬衫",
+      "goodsListImg": "http://img.alicdn.com/bao/uploaded/i4/TB1QP0gJpXXXXczXpXXXXXXXXXX_!!0-item_pic.jpg_b.jpg",
+      "price": "198",
+      "discount": "0",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://ohe65w0xx.bkt.clouddn.com/u=2263418180,3668836868&fm=206&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://ohe65w0xx.bkt.clouddn.com/u=3637404049,2821183587&fm=214&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://ohe65w0xx.bkt.clouddn.com/avert.png"
+        }
+      ]
     },
     {
-        "goodsID":"12",
-        "classID":"2",
-        "goodsName":"男士修身商务正装",
-        "goodsListImg":"http://g-search3.alicdn.com/img/bao/uploaded/i4/i1/TB1EmgpJXXXXXbTXVXXXXXXXXXX_!!0-item_pic.jpg_180x180.jpg_.webp",
-        "price":"140",
-        "discount":"8",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://c.hiphotos.baidu.com/image/pic/item/cefc1e178a82b901e004bbc17f8da9773812ef93.jpg"
-            },
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=469947196,2200896817&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://ohe65w0xx.bkt.clouddn.com/avert.png"
-            }
-        ]
+      "goodsID": "12",
+      "classID": "2",
+      "goodsName": "男士修身商务正装",
+      "goodsListImg": "http://g-search3.alicdn.com/img/bao/uploaded/i4/i1/TB1EmgpJXXXXXbTXVXXXXXXXXXX_!!0-item_pic.jpg_180x180.jpg_.webp",
+      "price": "140",
+      "discount": "8",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://c.hiphotos.baidu.com/image/pic/item/cefc1e178a82b901e004bbc17f8da9773812ef93.jpg"
+        },
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=469947196,2200896817&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://ohe65w0xx.bkt.clouddn.com/avert.png"
+        }
+      ]
     },
     {
-        "goodsID":"19",
-        "classID":"2",
-        "goodsName":"伴娘礼服短款打底连衣裙",
-        "goodsListImg":"https://g-search1.alicdn.com/img/bao/uploaded/i4/i4/TB1K46CHXXXXXcbXpXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg",
-        "price":"115",
-        "discount":"9",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=1241183182,2216423185&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img1.imgtn.bdimg.com/it/u=3950755685,3205194702&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img0.imgtn.bdimg.com/it/u=3340715302,2670748164&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "19",
+      "classID": "2",
+      "goodsName": "伴娘礼服短款打底连衣裙",
+      "goodsListImg": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i4/TB1K46CHXXXXXcbXpXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg",
+      "price": "115",
+      "discount": "9",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=1241183182,2216423185&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img1.imgtn.bdimg.com/it/u=3950755685,3205194702&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img0.imgtn.bdimg.com/it/u=3340715302,2670748164&fm=27&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"24",
-        "classID":"3",
-        "goodsName":"大码韩版棉袄羊羔毛外套",
-        "goodsListImg":"http://g-search2.alicdn.com/img/bao/uploaded/i4/i2/TB1dPGFGpXXXXXDXFXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg_.webp",
-        "price":"79.9",
-        "discount":"8",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img1.imgtn.bdimg.com/it/u=3965538963,1467968882&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img3.imgtn.bdimg.com/it/u=1099171353,3577182778&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "24",
+      "classID": "3",
+      "goodsName": "大码韩版棉袄羊羔毛外套",
+      "goodsListImg": "http://g-search2.alicdn.com/img/bao/uploaded/i4/i2/TB1dPGFGpXXXXXDXFXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg_.webp",
+      "price": "79.9",
+      "discount": "8",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img1.imgtn.bdimg.com/it/u=3965538963,1467968882&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img3.imgtn.bdimg.com/it/u=1099171353,3577182778&fm=27&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"33",
-        "classID":"4",
-        "goodsName":"棒球领拉链长袖插袋外套",
-        "goodsListImg":"https://g-search1.alicdn.com/img/bao/uploaded/i4/i3/TB1l1RHJFXXXXXDXVXXXXXXXXXX_!!0-item_pic.jpg_180x180.jpg_.webp",
-        "price":"189",
-        "discount":"0",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img4.imgtn.bdimg.com/it/u=1152302,3546600776&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img3.imgtn.bdimg.com/it/u=2292707642,3324094505&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img2.imgtn.bdimg.com/it/u=2224307475,2737621635&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "33",
+      "classID": "4",
+      "goodsName": "棒球领拉链长袖插袋外套",
+      "goodsListImg": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i3/TB1l1RHJFXXXXXDXVXXXXXXXXXX_!!0-item_pic.jpg_180x180.jpg_.webp",
+      "price": "189",
+      "discount": "0",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img4.imgtn.bdimg.com/it/u=1152302,3546600776&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img3.imgtn.bdimg.com/it/u=2292707642,3324094505&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img2.imgtn.bdimg.com/it/u=2224307475,2737621635&fm=27&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"39",
-        "classID":"4",
-        "goodsName":"修身休闲短外套",
-        "goodsListImg":"https://img.alicdn.com/bao/uploaded/i2/TB1yeBJJXXXXXa1XXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg",
-        "price":"128",
-        "discount":"8",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img3.imgtn.bdimg.com/it/u=2613768400,3069821835&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "39",
+      "classID": "4",
+      "goodsName": "修身休闲短外套",
+      "goodsListImg": "https://img.alicdn.com/bao/uploaded/i2/TB1yeBJJXXXXXa1XXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg",
+      "price": "128",
+      "discount": "8",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img3.imgtn.bdimg.com/it/u=2613768400,3069821835&fm=27&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"43",
-        "classID":"5",
-        "goodsName":"2015韩国东大门女装秋冬季新款波点圆领长袖百搭卫衣",
-        "goodsListImg":"http://g-search3.alicdn.com/img/bao/uploaded/i4/i1/TB1FW7RJVXXXXXbXpXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg",
-        "price":"89",
-        "discount":"6",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img2.imgtn.bdimg.com/it/u=454648840,4222799126&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img2.imgtn.bdimg.com/it/u=123183879,1313303915&fm=200&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=1404894513,1401261938&fm=11&gp=0.jpg"
-            }
-        ]
+      "goodsID": "43",
+      "classID": "5",
+      "goodsName": "2015韩国东大门女装秋冬季新款波点圆领长袖百搭卫衣",
+      "goodsListImg": "http://g-search3.alicdn.com/img/bao/uploaded/i4/i1/TB1FW7RJVXXXXXbXpXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg",
+      "price": "89",
+      "discount": "6",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img2.imgtn.bdimg.com/it/u=454648840,4222799126&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img2.imgtn.bdimg.com/it/u=123183879,1313303915&fm=200&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=1404894513,1401261938&fm=11&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"52",
-        "classID":"5",
-        "goodsName":"韩版女式宽松套头破洞牛仔长袖连帽卫衣",
-        "goodsListImg":"http://s18.mogucdn.com/p1/151021/11gcxq_ie4tqojzmvsgezrvgqzdambqgqyde_640x960.jpg_220x330.webp",
-        "price":"99",
-        "discount":"8",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=1571428641,1791014462&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img3.imgtn.bdimg.com/it/u=2348237451,1480165332&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "52",
+      "classID": "5",
+      "goodsName": "韩版女式宽松套头破洞牛仔长袖连帽卫衣",
+      "goodsListImg": "http://s18.mogucdn.com/p1/151021/11gcxq_ie4tqojzmvsgezrvgqzdambqgqyde_640x960.jpg_220x330.webp",
+      "price": "99",
+      "discount": "8",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=1571428641,1791014462&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img3.imgtn.bdimg.com/it/u=2348237451,1480165332&fm=27&gp=0.jpg"
+        }
+      ]
     },
     {
-        "goodsID":"57",
-        "classID":"3",
-        "goodsName":"波司登（BOSIDENG）羽绒服男款",
-        "goodsListImg":"http://img14.360buyimg.com/n2/jfs/t2257/88/581178076/140752/3173e831/5618c255Nc944c200.jpg",
-        "price":"899",
-        "discount":"8",
-        "pellImageList":[
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=1660719847,2128667878&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img4.imgtn.bdimg.com/it/u=2500434987,4293101441&fm=27&gp=0.jpg"
-            },
-            {
-                "pellImageUrl":"http://img5.imgtn.bdimg.com/it/u=1628196423,51417386&fm=27&gp=0.jpg"
-            }
-        ]
+      "goodsID": "57",
+      "classID": "3",
+      "goodsName": "波司登（BOSIDENG）羽绒服男款",
+      "goodsListImg": "http://img14.360buyimg.com/n2/jfs/t2257/88/581178076/140752/3173e831/5618c255Nc944c200.jpg",
+      "price": "899",
+      "discount": "8",
+      "pellImageList": [
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=1660719847,2128667878&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img4.imgtn.bdimg.com/it/u=2500434987,4293101441&fm=27&gp=0.jpg"
+        },
+        {
+          "pellImageUrl": "http://img5.imgtn.bdimg.com/it/u=1628196423,51417386&fm=27&gp=0.jpg"
+        }
+      ]
     }
-]}
+  ]
+}

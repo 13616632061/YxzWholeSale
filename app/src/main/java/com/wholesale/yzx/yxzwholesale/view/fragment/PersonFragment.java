@@ -1,13 +1,10 @@
 package com.wholesale.yzx.yxzwholesale.view.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -20,6 +17,7 @@ import com.wholesale.yzx.yxzwholesale.base.BaseFragment;
 import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
 import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
+import com.wholesale.yzx.yxzwholesale.view.activity.MyOrderListAcitivty;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.widght.CircleImageView;
 import com.wholesale.yzx.yxzwholesale.view.widght.RecyclerViewScrollListener;
@@ -27,8 +25,10 @@ import com.wholesale.yzx.yxzwholesale.view.widght.RecyclerViewScrollListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
+
+import static com.wholesale.yzx.yxzwholesale.R.id.tv_wait_comment;
 
 /**
  * Created by Administrator on 2018/6/28.
@@ -43,6 +43,9 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
     @InjectView(R.id.tv_title_bar)
     TextView tvTitleBar;
 
+//    R.id.tv_wait_pay,R.id.tv_wait_share,R.id.tv_wait_send,R.id.tv_wait_get,tv_wait_comment};
+//
+//    private
 
     private GoodsListFragmentAdapter goodsListAdapter;
     private List<GoodsListBean.ListFreshTypeBean> goodDatas = new ArrayList<>();//商品数据
@@ -57,8 +60,10 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
         super.init();
 
         View headView = View.inflate(getActivity(), R.layout.person_fragment_head_view, null);
-        CircleImageView iv_person_photo=headView.findViewById(R.id.iv_person_photo);
-        String URL="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3612952217,3851762239&fm=27&gp=0.jpg";
+
+        initHeadterView(headView);
+        CircleImageView iv_person_photo = headView.findViewById(R.id.iv_person_photo);
+        String URL = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3612952217,3851762239&fm=27&gp=0.jpg";
         Glide.with(getActivity()).load(URL).into(iv_person_photo);
 
 
@@ -99,6 +104,11 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
 
     }
 
+    private void initHeadterView(View headView) {
+
+    }
+
+
     /**
      * 商品列表数据
      */
@@ -121,22 +131,27 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
-    }
-
-    @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        Intent intent=new Intent(getActivity(),GoodsDetailActivity.class);
+        Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
         startActivity(intent);
     }
+
+   @OnClick({R.id.tv_wait_pay,R.id.tv_wait_share,R.id.tv_wait_send,R.id.tv_wait_get,tv_wait_comment})
+    public void setOnClick(View v){
+       switch (v.getId()){
+           case R.id.tv_wait_pay:
+               Intent intent=new Intent(getActivity(), MyOrderListAcitivty.class);
+               intent.putExtra("index",1);
+               startActivity(intent);
+               break;
+           case R.id.tv_wait_share:
+               break;
+           case R.id.tv_wait_send:
+               break;
+           case R.id.tv_wait_get:
+               break;
+           case tv_wait_comment:
+               break;
+       }
+   }
 }

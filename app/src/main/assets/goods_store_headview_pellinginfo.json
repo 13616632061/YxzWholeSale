@@ -1,0 +1,39 @@
+{
+  "pellingInfoList": [
+    {
+      "photo": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1612730903,2278218101&fm=27&gp=0.jpg",
+      "name": "0荣",
+      "time": "04:15:18",
+      "goodsImage": "http://img3.imgtn.bdimg.com/it/u=2348237451,1480165332&fm=27&gp=0.jpg",
+      "price": 19.9
+    },
+    {
+      "photo":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532603607881&di=162c853d44b0b38ebbe08008ed0e5574&imgtype=0&src=http%3A%2F%2Fimg07.tooopen.com%2Fimages%2F20170630%2Ftooopen_sy_215154486418.jpg",
+      "name":"小芳",
+      "time": "23:17:32",
+      "goodsImage": "http://img5.imgtn.bdimg.com/it/u=1660719847,2128667878&fm=27&gp=0.jpg",
+      "price": 599.9
+    },
+    {
+      "photo":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3876273790,823195086&fm=27&gp=0.jpg",
+      "name":"182*****3589",
+      "time": "11:15:29",
+      "goodsImage": "http://img5.imgtn.bdimg.com/it/u=1404894513,1401261938&fm=11&gp=0.jpg",
+      "price": 105.0
+    },
+    {
+      "photo":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3393902297,1378756784&fm=27&gp=0.jpg",
+      "name":"孤独一剑",
+      "time": "16:15:10",
+      "goodsImage": "http://img2.imgtn.bdimg.com/it/u=454648840,4222799126&fm=27&gp=0.jpg",
+      "price": 199.9
+    },
+    {
+      "photo":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2888438117,752146847&fm=27&gp=0.jpg",
+      "name":"妖娆的毒药",
+      "time": "17:37:23",
+      "goodsImage": "http://img3.imgtn.bdimg.com/it/u=2613768400,3069821835&fm=27&gp=0.jpg",
+      "price": 99.9
+    }
+  ]
+}

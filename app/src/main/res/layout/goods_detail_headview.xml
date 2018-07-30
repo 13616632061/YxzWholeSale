@@ -229,6 +229,11 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:text="进店逛逛"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/side_black_redus5"
             android:textColor="@color/text_color_title"
             android:textSize="14sp" />
     </RelativeLayout>
