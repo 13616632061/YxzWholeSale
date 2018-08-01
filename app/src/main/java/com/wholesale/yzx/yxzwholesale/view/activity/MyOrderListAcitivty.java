@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.nshmura.recyclertablayout.RecyclerTabLayout;
@@ -16,6 +17,7 @@ import com.wholesale.yzx.yxzwholesale.view.fragment.OrderListFragment;
 import java.util.ArrayList;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class MyOrderListAcitivty extends BaseActivity {
 
@@ -40,6 +42,8 @@ public class MyOrderListAcitivty extends BaseActivity {
     @Override
     protected void init() {
         super.init();
+
+        initTitle("我的订单",true,"",R.drawable.search_bar_icon_normal);
         initData();
         adapter = new IndexFragmentAdapter(getSupportFragmentManager());
         viewpager.setAdapter(adapter);
@@ -93,6 +97,14 @@ public class MyOrderListAcitivty extends BaseActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             return tabList.get(position);//分类标签
+        }
+    }
+    @OnClick({R.id.left_return_btn})
+    public void setOnClick(View view){
+        switch (view.getId()){
+            case R.id.left_return_btn:
+                finish();
+                break;
         }
     }
 }

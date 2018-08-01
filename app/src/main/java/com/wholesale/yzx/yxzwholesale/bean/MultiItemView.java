@@ -10,6 +10,7 @@ public class MultiItemView<T> implements MultiItemEntity{
 
     public static final int TITLE = 1;
     public static final int BODY = 2;
+    public static final int FOOTER= 3;
     private int itemType;
     private T bean;
 

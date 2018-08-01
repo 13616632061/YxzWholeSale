@@ -26,15 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
-import butterknife.OnClick;
-
-import static com.wholesale.yzx.yxzwholesale.R.id.tv_wait_comment;
 
 /**
  * Created by Administrator on 2018/6/28.
  */
 
-public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
+public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener, View.OnClickListener {
 
     @InjectView(R.id.list)
     RecyclerView list;
@@ -43,9 +40,8 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
     @InjectView(R.id.tv_title_bar)
     TextView tvTitleBar;
 
-//    R.id.tv_wait_pay,R.id.tv_wait_share,R.id.tv_wait_send,R.id.tv_wait_get,tv_wait_comment};
-//
-//    private
+
+    private TextView tv_wait_pay, tv_wait_share, tv_wait_send, tv_wait_get, tv_wait_comment;
 
     private GoodsListFragmentAdapter goodsListAdapter;
     private List<GoodsListBean.ListFreshTypeBean> goodDatas = new ArrayList<>();//商品数据
@@ -105,7 +101,17 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
     }
 
     private void initHeadterView(View headView) {
+        tv_wait_pay=headView.findViewById(R.id.tv_wait_pay);
+        tv_wait_share=headView.findViewById(R.id.tv_wait_share);
+        tv_wait_send=headView.findViewById(R.id.tv_wait_send);
+        tv_wait_get=headView.findViewById(R.id.tv_wait_get);
+        tv_wait_comment=headView.findViewById(R.id.tv_wait_comment);
 
+        tv_wait_pay.setOnClickListener(this);
+        tv_wait_share.setOnClickListener(this);
+        tv_wait_send.setOnClickListener(this);
+        tv_wait_get.setOnClickListener(this);
+        tv_wait_comment.setOnClickListener(this);
     }
 
 
@@ -136,22 +142,34 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
         startActivity(intent);
     }
 
-   @OnClick({R.id.tv_wait_pay,R.id.tv_wait_share,R.id.tv_wait_send,R.id.tv_wait_get,tv_wait_comment})
-    public void setOnClick(View v){
-       switch (v.getId()){
-           case R.id.tv_wait_pay:
-               Intent intent=new Intent(getActivity(), MyOrderListAcitivty.class);
-               intent.putExtra("index",1);
-               startActivity(intent);
-               break;
-           case R.id.tv_wait_share:
-               break;
-           case R.id.tv_wait_send:
-               break;
-           case R.id.tv_wait_get:
-               break;
-           case tv_wait_comment:
-               break;
-       }
-   }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_wait_pay:
+                Intent intent = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent.putExtra("index", 1);
+                startActivity(intent);
+                break;
+            case R.id.tv_wait_share:
+                Intent intent2 = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent2.putExtra("index", 2);
+                startActivity(intent2);
+                break;
+            case R.id.tv_wait_send:
+                Intent intent3 = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent3.putExtra("index", 3);
+                startActivity(intent3);
+                break;
+            case R.id.tv_wait_get:
+                Intent intent4 = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent4.putExtra("index", 4);
+                startActivity(intent4);
+                break;
+            case R.id.tv_wait_comment:
+                Intent intent5 = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent5.putExtra("index", 5);
+                startActivity(intent5);
+                break;
+        }
+    }
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@color/bggray"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <org.raphets.roundimageview.RoundImageView
+            android:id="@+id/iv_goods_image"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="90dp"
+            android:layout_height="90dp" />
+        <LinearLayout
+            android:layout_toLeftOf="@+id/layout_right"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/iv_goods_image"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+            <TextView
+                android:id="@+id/tv_goods_name"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_color_title"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_goods_describe"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/tv_color_gray"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/layout_right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp">
+            <TextView
+                android:id="@+id/tv_goods_price"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_color_title"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_goods_nums"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/tv_color_gray"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
