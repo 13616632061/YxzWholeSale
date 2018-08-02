@@ -41,7 +41,7 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
     TextView tvTitleBar;
 
 
-    private TextView tv_wait_pay, tv_wait_share, tv_wait_send, tv_wait_get, tv_wait_comment;
+    private TextView tv_wait_pay, tv_wait_share, tv_wait_send, tv_wait_get, tv_wait_comment,tv_all_order;
 
     private GoodsListFragmentAdapter goodsListAdapter;
     private List<GoodsListBean.ListFreshTypeBean> goodDatas = new ArrayList<>();//商品数据
@@ -106,12 +106,14 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
         tv_wait_send=headView.findViewById(R.id.tv_wait_send);
         tv_wait_get=headView.findViewById(R.id.tv_wait_get);
         tv_wait_comment=headView.findViewById(R.id.tv_wait_comment);
+        tv_all_order=headView.findViewById(R.id.tv_all_order);
 
         tv_wait_pay.setOnClickListener(this);
         tv_wait_share.setOnClickListener(this);
         tv_wait_send.setOnClickListener(this);
         tv_wait_get.setOnClickListener(this);
         tv_wait_comment.setOnClickListener(this);
+        tv_all_order.setOnClickListener(this);
     }
 
 
@@ -169,6 +171,11 @@ public class PersonFragment extends BaseFragment implements BaseQuickAdapter.OnI
                 Intent intent5 = new Intent(getActivity(), MyOrderListAcitivty.class);
                 intent5.putExtra("index", 5);
                 startActivity(intent5);
+                break;
+            case R.id.tv_all_order:
+                Intent intent0 = new Intent(getActivity(), MyOrderListAcitivty.class);
+                intent0.putExtra("index", 0);
+                startActivity(intent0);
                 break;
         }
     }

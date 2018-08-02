@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_order_price"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:textColor="@color/text_color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.wholesale.yzx.yxzwholesale.view.widght.PileAvertView
+            android:id="@+id/iv_pell_photo"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></com.wholesale.yzx.yxzwholesale.view.widght.PileAvertView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/tv1"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/side_black_redus5"
+            android:gravity="center"
+            android:text="再次购买"
+            android:visibility="gone"
+            android:textColor="@color/text_color_title" />
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/tv2"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv1"
+            android:background="@drawable/side_black_redus5"
+            android:gravity="center"
+            android:text="评价"
+            android:visibility="gone"
+            android:textColor="@color/text_color_title" />
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/tv3"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv2"
+            android:background="@drawable/side_black_redus5"
+            android:gravity="center"
+            android:text="查看物流"
+            android:visibility="gone"
+            android:textColor="@color/text_color_title" />
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/tv4"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv3"
+            android:background="@drawable/side_black_redus5"
+            android:gravity="center"
+            android:text="删除订单"
+            android:visibility="gone"
+            android:textColor="@color/text_color_title" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -48,6 +48,7 @@ public class MyOrderListAcitivty extends BaseActivity {
         adapter = new IndexFragmentAdapter(getSupportFragmentManager());
         viewpager.setAdapter(adapter);
         tabLayout.setUpWithViewPager(viewpager);
+        viewpager.setOffscreenPageLimit(0);
 
         Intent intent=getIntent();
         if(intent!=null){
