@@ -2,14 +2,12 @@ package com.wholesale.yzx.yxzwholesale.view.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cjj.MaterialRefreshLayout;
@@ -21,13 +19,13 @@ import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.bean.MultiItemView;
 import com.wholesale.yzx.yxzwholesale.bean.OrderListInfoBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.OrderDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.OrderListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
@@ -44,10 +42,11 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
     private OrderListAdapter adapter;
     private List<MultiItemView<OrderListInfoBean.OrderListBean>> datas = new ArrayList<>();
     private String orderType;
-    private View emptyLayout,tv_headterView;
+    private View emptyLayout, tv_headterView;
 
     private GoodsListFragmentAdapter goodsListAdapter;
     private List<GoodsListBean.ListFreshTypeBean> goodDatas = new ArrayList<>();//商品数据
+    private boolean isFirst = true;
 
 
     @Override
@@ -68,6 +67,7 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
         list.setAdapter(adapter);
         list.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter.setOnItemChildClickListener(this);
+        adapter.setOnItemClickListener(this);
 
         refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
@@ -78,17 +78,33 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
             }
         });
 //
-        datas.clear();
-        adapter.notifyDataSetChanged();
-        getOrderData();
+        if (isFirst) {
+            datas.clear();
+            adapter.notifyDataSetChanged();
+            getOrderData();
+        }
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (getUserVisibleHint()) {
+            if (adapter != null) {
+                datas.clear();
+                adapter.notifyDataSetChanged();
+            }
+            if (!isFirst && refresh != null) {
+                getOrderData();
+            }
+        }
+    }
 
     /**
      * 商品列表数据
      */
     private void getOrderData() {
         //得到本地json文本内容
+        isFirst = false;
         String fileName = "orderlist.json";
         String json = JsonUtil.getJson(getActivity(), fileName);
         Log.i("shuju", json);
@@ -126,23 +142,25 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
             }
         }
 
-        Log.i("datas",datas.size()+"");
+        Log.i("datas", datas.size() + "");
         if (datas.size() <= 0) {
-            if (goodsListAdapter == null) {
-                goodsListAdapter = new GoodsListFragmentAdapter(getActivity(), R.layout.item_goods_list, goodDatas);
-                list.setAdapter(goodsListAdapter);
 
-                final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
-                layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                    @Override
-                    public int getSpanSize(int position) {
-                        return (position == 0) ? layoutManager.getSpanCount() : 1;
-                    }
-                });
-                list.setLayoutManager(layoutManager);
-            }
             if (goodsListAdapter != null) {
                 goodsListAdapter.removeAllHeaderView();
+            }
+            goodsListAdapter = new GoodsListFragmentAdapter(getActivity(), R.layout.item_goods_list, goodDatas);
+            list.setAdapter(goodsListAdapter);
+
+            final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    return (position == 0) ? layoutManager.getSpanCount() : 1;
+                }
+            });
+            list.setLayoutManager(layoutManager);
+            if (goodsListAdapter != null) {
+
                 goodsListAdapter.setOnItemClickListener(this);
 
                 goodsListAdapter.addHeaderView(emptyLayout);
@@ -230,21 +248,11 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
     }
 
     @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+    public void onItemClick(BaseQuickAdapter mAdapter, View view, int position) {
+        if(mAdapter==adapter){
+            Intent intent=new Intent(getActivity(),OrderDetailActivity.class);
+            startActivity(intent);
+        }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
-    }
 }

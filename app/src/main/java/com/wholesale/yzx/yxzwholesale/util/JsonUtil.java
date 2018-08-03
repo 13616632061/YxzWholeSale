@@ -21,10 +21,10 @@ public class JsonUtil {
      */
     public static String getJson(Context context, String fileName){
         StringBuilder stringBuilder = new StringBuilder();
-        //获得assets资源管理器
-        AssetManager assetManager = context.getAssets();
         //使用IO流读取json文件内容
         try {
+            //获得assets资源管理器
+            AssetManager assetManager = context.getAssets();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
                     assetManager.open(fileName),"utf-8"));
             String line;

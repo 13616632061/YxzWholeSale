@@ -208,7 +208,8 @@
         <activity android:name=".view.activity.FriendPayActivity" />
         <activity android:name=".view.activity.GoodsCommentAcitvity" />
         <activity android:name=".view.activity.GoodsStoreInfoActivity" />
-        <activity android:name=".view.activity.MyOrderListAcitivty"></activity>
+        <activity android:name=".view.activity.MyOrderListAcitivty" />
+        <activity android:name=".view.activity.OrderDetailActivity"></activity>
     </application>
 
 </manifest>

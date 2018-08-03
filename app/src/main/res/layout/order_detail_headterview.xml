@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bggray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/red">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:text="交易成功"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="35dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_logistics"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_next"
+            android:layout_toRightOf="@+id/iv_logistics"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="在广东深圳公司龙岗区祥林分部进行签收扫描，快件已被同事代收签收"
+                android:textColor="@color/material_green"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2018-07-22 12:27:14"
+                android:textColor="@color/tv_color_gray" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_gray_next" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+            <ImageView
+                android:id="@+id/iv_adress"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+            <TextView
+                android:textColor="@color/text_color_title"
+                android:textSize="14sp"
+                android:text="张三    13125367342"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_color_title"
+                android:textSize="14sp"
+                android:text="深圳市 龙岗区 龙岗天安数码城4栋B座1102"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:text="拼单成功"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.wholesale.yzx.yxzwholesale.view.widght.WarpLinearLayout>
+            <TextView
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="@drawable/side_black_redus5"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="拼单详情"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/item_order_list_title"></include>
+        <include
+            layout="@layout/item_order_list_body"></include>
+        <RelativeLayout
+            android:paddingBottom="10dp"
+            android:background="@color/bggray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/red"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="申请退款"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
