@@ -209,7 +209,10 @@
         <activity android:name=".view.activity.GoodsCommentAcitvity" />
         <activity android:name=".view.activity.GoodsStoreInfoActivity" />
         <activity android:name=".view.activity.MyOrderListAcitivty" />
-        <activity android:name=".view.activity.OrderDetailActivity"></activity>
+        <activity android:name=".view.activity.OrderDetailActivity" />
+        <activity android:name=".view.activity.LookLogisticsActivity" />
+        <activity android:name=".view.activity.PellDetailActivity" />
+        <activity android:name=".view.activity.ApplyRefundActivity"></activity>
     </application>
 
 </manifest>

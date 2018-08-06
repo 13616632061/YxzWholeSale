@@ -19,6 +19,7 @@ import com.wholesale.yzx.yxzwholesale.bean.GoodsListBean;
 import com.wholesale.yzx.yxzwholesale.bean.MultiItemView;
 import com.wholesale.yzx.yxzwholesale.bean.OrderListInfoBean;
 import com.wholesale.yzx.yxzwholesale.util.JsonUtil;
+import com.wholesale.yzx.yxzwholesale.view.activity.GoodsDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.activity.OrderDetailActivity;
 import com.wholesale.yzx.yxzwholesale.view.adapter.GoodsListFragmentAdapter;
 import com.wholesale.yzx.yxzwholesale.view.adapter.OrderListAdapter;
@@ -167,6 +168,7 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
                 goodsListAdapter.addHeaderView(tv_headterView);
                 goodDatas.clear();
                 goodsListAdapter.notifyDataSetChanged();
+                goodsListAdapter.setOnItemClickListener(this);
                 getGoodslistData();
             }
 
@@ -249,8 +251,28 @@ public class OrderListFragment extends BaseFragment implements BaseQuickAdapter.
 
     @Override
     public void onItemClick(BaseQuickAdapter mAdapter, View view, int position) {
-        if(mAdapter==adapter){
-            Intent intent=new Intent(getActivity(),OrderDetailActivity.class);
+        if (mAdapter == adapter) {
+            switch (mAdapter.getItemViewType(position)) {
+                case MultiItemView.BODY:
+                    Intent intent = new Intent(getActivity(), OrderDetailActivity.class);
+                    intent.putExtra("OrderPrice", datas.get(position + 1).getBean().getOrderPrice());
+                    intent.putExtra("ShopName", datas.get(position - 1).getBean().getShopName());
+                    intent.putExtra("ShopLogo", datas.get(position - 1).getBean().getShopLogo());
+                    intent.putExtra("OrderStadue", datas.get(position - 1).getBean().getOrderStadue());
+                    intent.putExtra("OrderDetail_GoodName", datas.get(position).getBean().getOrderDetail().get(0).getGoodName());
+                    intent.putExtra("OrderDetail_Describe", datas.get(position).getBean().getOrderDetail().get(0).getGoodDescribe());
+                    intent.putExtra("OrderDetail_GoodPicture", datas.get(position).getBean().getOrderDetail().get(0).getGoodPicture());
+                    intent.putExtra("OrderDetail_GoodNum", datas.get(position).getBean().getOrderDetail().get(0).getGoodNum());
+                    intent.putExtra("OrderDetail_GoodPrice", datas.get(position).getBean().getOrderDetail().get(0).getGoodPrice());
+                    intent.putExtra("OrderDetail_GoodPrice0", datas.get(position + 1).getBean().getOrderPellInfo().get(0).getPellPersonPhoto());
+                    intent.putExtra("OrderDetail_GoodPrice1", datas.get(position + 1).getBean().getOrderPellInfo().get(1).getPellPersonPhoto());
+                    startActivity(intent);
+                    break;
+
+            }
+
+        }else if(mAdapter==goodsListAdapter){
+            Intent intent=new Intent(getActivity(), GoodsDetailActivity.class);
             startActivity(intent);
         }
     }
