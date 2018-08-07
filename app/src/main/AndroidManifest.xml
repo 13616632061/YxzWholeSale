@@ -212,7 +212,9 @@
         <activity android:name=".view.activity.OrderDetailActivity" />
         <activity android:name=".view.activity.LookLogisticsActivity" />
         <activity android:name=".view.activity.PellDetailActivity" />
-        <activity android:name=".view.activity.ApplyRefundActivity"></activity>
+        <activity android:name=".view.activity.ApplyRefundActivity"
+            android:configChanges="keyboardHidden"
+           android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

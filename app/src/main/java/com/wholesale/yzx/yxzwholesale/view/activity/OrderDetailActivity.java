@@ -178,6 +178,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
 
         layout_logistics.setOnClickListener(this);
         tv_pell_detail.setOnClickListener(this);
+        tv_apply_refund.setOnClickListener(this);
 
     }
 
@@ -217,6 +218,14 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                 intent_pell_detail.putExtra("OrderDetail_GoodPrice0",OrderDetail_GoodPrice0);
                 intent_pell_detail.putExtra("OrderDetail_GoodPrice1",OrderDetail_GoodPrice1);
                 startActivity(intent_pell_detail);
+                break;
+            case R.id.tv_apply_refund:
+                Intent intent_refund=new Intent(OrderDetailActivity.this,ApplyRefundActivity.class);
+                intent_refund.putExtra("tv_goods_name",OrderDetail_GoodName);
+                intent_refund.putExtra("OrderDetail_GoodPicture",OrderDetail_GoodPicture);
+                intent_refund.putExtra("OrderDetail_Describe",OrderDetail_Describe);
+                intent_refund.putExtra("OrderDetail_GoodPrice",OrderDetail_GoodPrice);
+                startActivity(intent_refund);
                 break;
 
         }
